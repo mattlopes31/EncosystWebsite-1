@@ -2,9 +2,21 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
-import { locales, localeLabels, localeFlags } from '@/i18n';
+import { routing } from '../../i18n/routing';
 import { useState, useRef, useEffect } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
+
+const localeLabels = {
+  fr: 'Français',
+  en: 'English',
+  es: 'Español'
+};
+
+const localeFlags = {
+  fr: '🇫🇷',
+  en: '🇬🇧',
+  es: '🇪🇸'
+};
 
 export default function LanguagesSwitcher() {
   const locale = useLocale();
@@ -53,7 +65,7 @@ export default function LanguagesSwitcher() {
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border-2 border-gray-200 overflow-hidden z-50">
-          {locales.map((loc) => (
+          {routing.locales.map((loc) => (
             <button
               key={loc}
               onClick={() => switchLocale(loc)}
