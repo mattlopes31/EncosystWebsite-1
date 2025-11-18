@@ -10,12 +10,12 @@ export default function Hero() {
   const t = useTranslations('hero');
   
   const images = [
-    '/imagesV2/HDG_toma_2.jpeg',
+    '/images/ARMOIRES/20240208_173603.jpg',
     '/images/ARMOIRES/oui.jpg',
+    '/images/scada3.png',
+    '/imagesV2/HDG_toma_2.jpeg',
     '/images/20201116_075131.jpg',
     '/images/20251024_162912.jpg',
-    '/images/scada3.png',
-    '/images/ARMOIRES/20240208_173603.jpg',
     '/images/IMG-20250306-WA0004.jpg',
     '/images/HDGtoma.jpeg'
   ];
@@ -70,6 +70,11 @@ export default function Hero() {
             {/* Ligne de soulignement */}
             <div className="mt-4 w-64 h-1 bg-gradient-to-r from-[#8DC63E] to-transparent rounded-full" />
           </div>
+
+           <p className="text-2xl md:text-3xl font-semibold text-white mb-8 animate-fade-in">
+            {t('title')}
+          </p>
+
           
           {/* Sous-titre */}
           <p className="text-2xl md:text-3xl font-semibold text-white mb-8 animate-fade-in">
@@ -82,7 +87,7 @@ export default function Hero() {
               href="/contact"
               className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-xl font-bold flex items-center justify-center gap-3 text-lg transition-all shadow-2xl hover:shadow-orange-500/50 hover:scale-105 animate-fade-in"
             >
-              {t('cta')}
+              {t('ctaButton')}
               <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link 

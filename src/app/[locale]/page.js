@@ -98,13 +98,14 @@ export default function HomePage() {
   const tProducts = useTranslations('products');
   const tCommon = useTranslations('common');
   const tHero = useTranslations('hero');
+  const tSolutions = useTranslations('solutions');
 
   const services = [
     { 
       title: tProducts('automatisme.title'),
       description: tProducts('automatisme.description'),
       icon: Brain,
-      details: ['Design personnalisé sur mesure', 'Fabrication dans nos ateliers', 'Programmes optimisés'],
+      detailKeys: ['automatisme.details.detail1', 'automatisme.details.detail2', 'automatisme.details.detail3'],
       images: [
         '/imagesV2/Armoires/Armoire_de_controle_comande_4.png',
         '/imagesV2/Armoires/3 Panel de control central hidroeléctricaplanta .jpg',
@@ -116,7 +117,7 @@ export default function HomePage() {
       title: tProducts('ingenierie.title'),
       description: tProducts('ingenierie.description'),
       icon: CircuitBoard,
-      details: ['Postes HTA', 'Distributions des auxiliaires', 'Systèmes Auxiliaires'],
+      detailKeys: ['ingenierie.details.detail1', 'ingenierie.details.detail2', 'ingenierie.details.detail3'],
       images: [
         '/imagesV2/Ingénierie du systeme electrique/Cellules HTA 1.jpg',
         '/imagesV2/Ingénierie du systeme electrique/Chargeur de batteries.jpg',
@@ -128,7 +129,7 @@ export default function HomePage() {
       title: tProducts('scada.title'),
       description: tProducts('scada.description'),
       icon: Monitor,
-      details: ['Interface ergonomique', 'Accès distant', 'Historisation','Outils d/aide à la maintenance préventive' ],
+      detailKeys: ['scada.details.detail1', 'scada.details.detail2', 'scada.details.detail3', 'scada.details.detail4'],
       images: [
         '/images/scada.png',
         '/imagesV2/SCADA/architecture.png',
@@ -140,7 +141,7 @@ export default function HomePage() {
       title: tProducts('dataVisualisation.title'),
       description: tProducts('dataVisualisation.description'),
       icon: Database,
-      details: ['Industrie 4.0', 'IoT & BigData', 'Tableaux de bord dynamiques'],
+      detailKeys: ['dataVisualisation.details.detail1', 'dataVisualisation.details.detail2', 'dataVisualisation.details.detail3'],
       images: [
         '/images/Encosyst Web Report.png',
         '/imagesV2/Visualisation de données et rapports/2022-07-04 08_46_50-Productions - ENCOSyst Web Report et 12 pages de plus - Personnel – Microsoft​ E.png'
@@ -151,7 +152,7 @@ export default function HomePage() {
       title: tProducts('vitesse.title'),
       description: tProducts('vitesse.description'),
       icon: Gauge,
-      details: ['Tous types de turbines', 'Conformes aux normes IEC et IEEE', 'Groupes hydrauliques'],
+      detailKeys: ['vitesse.details.detail1', 'vitesse.details.detail2', 'vitesse.details.detail3'],
       images: [
         '/images/Imagescontour/HPU Speed governor.png',
         '/imagesV2/Régulateurs de vitesse/Retrofit régulateur de vitesse.png'
@@ -162,7 +163,7 @@ export default function HomePage() {
       title: tProducts('tension.title'),
       description: tProducts('tension.description'),
       icon: Zap,
-      details: ['Jusqu\'à 1000Adc', 'Régulateurs intégrés', 'Haute précision'],
+      detailKeys: ['tension.details.detail1', 'tension.details.detail2', 'tension.details.detail3'],
       images: [
         'imagesV2/Régulateurs de tension/excitation statique (2).jpg',
         'imagesV2/Régulateurs de tension/Static excitation system FAT.jpg',
@@ -173,7 +174,7 @@ export default function HomePage() {
       title: tProducts('protections.title'),
       description: tProducts('protections.description'),
       icon: Shield,
-      details: ['Protection alternateurs', 'Protection transformateurs', 'Protection lignes'],
+      detailKeys: ['protections.details.detail1', 'protections.details.detail2', 'protections.details.detail3'],
       images: [
         'imagesV2/Protetctions/relais de protection.jpg',
         'imagesV2/Protetctions/protection relay calculation.jpg',
@@ -185,7 +186,7 @@ export default function HomePage() {
       title: tProducts('instrumentation.title'),
       description: tProducts('instrumentation.description'),
       icon: Gauge,
-      details: ['Installation complète', 'Barrages et prises d\'eau', 'Large gamme de capteurs'],
+      detailKeys: ['instrumentation.details.detail1', 'instrumentation.details.detail2', 'instrumentation.details.detail3'],
       images: [
         'imagesV2/Instrumentation/Instrumentation.jpg'
       ],
@@ -204,10 +205,10 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <span className="inline-block bg-[#8DC63E]/20 text-[#8DC63E] px-4 py-2 rounded-full text-lg font-semibold mb-4">
-                Présence Internationale
+                {tHero('worldPresence')}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Une Expertise Mondiale
+                {tHero('worldExpertise')}
               </h2>
             </div>
             
@@ -225,8 +226,7 @@ export default function HomePage() {
             
             <div className="text-center mb-12">
               <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
-                Depuis 2011, ENCOSYST accompagne des projets hydroélectriques sur 4 continents, 
-                de la France à l'Amérique Centrale, en passant par l'Afrique et l'Asie.
+                {tHero('worldDescription')}
               </p>
             </div>
             
@@ -235,7 +235,7 @@ export default function HomePage() {
                 href="/references"
                 className="inline-flex items-center gap-2 bg-[#8DC63E] text-white hover:bg-[#7AB62F] px-8 py-4 rounded-xl font-bold transition-all shadow-xl text-lg hover:scale-105"
               >
-                Découvrir nos références
+                {tHero('discoverReferences')}
                 <ChevronRight size={20} />
               </Link>
             </div>  
@@ -249,10 +249,10 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-lg font-semibold mb-4">
-                Nos Chiffres
+                {tHero('ourNumbers')}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Une Expertise Éprouvée
+                {tHero('provenExpertise')}
               </h2>
             </div>
 
@@ -291,7 +291,7 @@ export default function HomePage() {
                   <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-400 mb-3">
                     <CountUpAnimation end={320} />
                   </div>
-                  <div className="text-gray-600 font-semibold text-lg">MW installés</div>
+                  <div className="text-gray-600 font-semibold text-lg">{tHero('installedMW')}</div>
                 </div>
               </div>
               <div className="text-center group">
@@ -299,7 +299,7 @@ export default function HomePage() {
                   <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-400 mb-3">
                     <CountUpAnimation end={8} />
                   </div>
-                  <div className="text-gray-600 font-semibold text-lg">Collaborateurs</div>
+                  <div className="text-gray-600 font-semibold text-lg">{tHero('employees')}</div>
                 </div>
               </div>
             </div>
@@ -312,13 +312,13 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-4xl mx-auto">
             <span className="inline-block bg-[#8DC63E]/20 text-[#8DC63E] px-4 py-2 rounded-full text-lg font-semibold mb-4">
-              Nos Solutions
+              {tSolutions('title')}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Domaines de Compétences
+              {tSolutions('solutionsTitle')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une expertise complète en systèmes de contrôle-commande pour centrales hydroélectriques
+              {tSolutions('solutionsDescription')}
             </p>
           </div>
           
@@ -355,12 +355,12 @@ export default function HomePage() {
                       {service.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {service.details.map((detail, idx) => (
+                      {service.detailKeys.map((detailKey, idx) => (
                         <span 
                           key={idx}
                           className="text-lg bg-orange-50 border border-orange-200 text-orange-600 px-4 py-2 rounded-full font-medium"
                         >
-                          {detail}
+                          {tProducts(detailKey)}
                         </span>
                       ))}
                     </div>
@@ -381,16 +381,16 @@ export default function HomePage() {
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Un Projet en Vue ?
+            {tHero('ctaTitle')}
           </h3>
           <p className="text-xl md:text-2xl text-orange-50 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Discutons de vos besoins et trouvons ensemble la solution adaptée à votre installation
+            {tHero('ctaDescription')}
           </p>
           <Link 
             href="/contact"
             className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-orange-400 px-10 py-5 rounded-xl font-bold transition-all text-lg shadow-2xl hover:shadow-white/20 hover:scale-105"
           >
-            Nous Contacter
+            {tHero('ctaButton')}
             <ChevronRight size={24} />
           </Link>
         </div>

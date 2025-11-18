@@ -3,6 +3,7 @@
 import { Activity, Check, Zap, TrendingUp, ArrowLeft, Radio, Shield, Gauge, AlertCircle, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 function ImageCarousel({ images, alt }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,68 +52,21 @@ function ImageCarousel({ images, alt }) {
 }
 
 export default function RegulationTensionExcitationPage() {
-  const pointsForts = [
-    {
-      titre: 'Intégration',
-      description: 'Intégration de régulateurs des fabricants leaders mondiaux'
-    },
-    {
-      titre: 'Fabrication Propre',
-      description: 'Conception et fabrication d\'armoire d\'excitation statique jusqu\'à 1000 Adc'
-    },
-    {
-      titre: 'Fiabilité',
-      description: 'Utilisation de produits de fabricants européens fiables'
-    },
-    {
-      titre: 'Flexibilité et Redondance',
-      description: 'Redondance possible des principaux composants'
-    }
-  ];
-
+  const t = useTranslations('products.tension.page');
+  
+  const pointsForts = t.raw('pointsForts.items');
   const fonctionnalitesRegulateur = {
-    modeRegulation: [
-      'Rampe de démarrage',
-      'Égalisation de tension durant la synchronisation',
-      'Régulation du courant d\'excitation (mode manuel)',
-      'Régulation de tension',
-      'Régulation de cos φ',
-      'Régulation de puissance réactive'
-    ],
-    autresFonctionnalites: [
-      'Compensation de la puissance réactive par système'
-    ]
+    modeRegulation: t.raw('fonctionnalitesRegulateur.modeRegulation.items'),
+    autresFonctionnalites: t.raw('fonctionnalitesRegulateur.autresFonctionnalites.items')
   };
-
-  const systemesRegulateur = [
-    'Nous proposons des armoires neuves ou de montée de niveau de vos anciens régulateurs et charme',
-    'Service Clé en Main : Surveillance-conseil et communication avec vos équipes de régulation',
-    'Fiabilité : Solutions de remplacement de service assuré'
-  ];
-
-  const problematiques = [
-    'Manque de retour d\'expérience',
-    'Défaut de conception',
-    'Manquer causeur d\'avantages à zéro et de traction excessive',
-    'Erreur de paramétrage',
-    'Non-disponibilité de pièces',
-    'Tension stator'
-  ];
-
-  const servicePropose = [
-    'Service : votre régulation',
-    'SCADA / Modbus RTU / port de communication',
-    'AC & DC / port ethernet',
-    'Choix / Régulateur multiconsommateur ou d\'excitation (obsolète)',
-    'Kits / Régul secours personnel excitation',
-    'Portail / équivalents fonctionnels',
-    'Mise hors service tension et remise en service équipement',
-    'Porte auxiliaire / port statorique de courant et de tension'
-  ];
+  const systemesRegulateur = t.raw('systemesRegulateur.items');
+  const problematiques = t.raw('problematiques.items');
+  const servicePropose = t.raw('servicesPropose.items');
+  const armoiresExcitationItems = t.raw('armoiresExcitation.items');
 
   const images = [
-  '/imagesV2/Régulateurs de tension/excitation statique (2).jpg',
-  '/imagesV2/Régulateurs de tension/Static excitation system FAT.jpg',
+    '/imagesV2/Régulateurs de tension/excitation statique (2).jpg',
+    '/imagesV2/Régulateurs de tension/Static excitation system FAT.jpg',
   ];
 
   return (
@@ -123,7 +77,7 @@ export default function RegulationTensionExcitationPage() {
           className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
         >
           <ArrowLeft size={20} />
-          Retour aux produits
+          {t('backButton')}
         </Link>
       </div>
 
@@ -136,10 +90,10 @@ export default function RegulationTensionExcitationPage() {
             </div>
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
-                Armoires d'Excitation Statique et de Régulation de Tension
+                {t('mainTitle')}
               </h1>
               <p className="text-xl text-gray-600 mt-2">
-                Notre expertise en contrôle de la chaîne d'excitation de vos alternateurs
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -150,7 +104,7 @@ export default function RegulationTensionExcitationPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-            <ImageCarousel images={images} alt="Régulation de tension et excitation statique" />
+            <ImageCarousel images={images} alt={t('mainTitle')} />
           </div>
         </div>
       </section>
@@ -160,15 +114,11 @@ export default function RegulationTensionExcitationPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl border-2 border-gray-200 p-12 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Excitation de Tension pour alternateurs à diodes tournantes (sans balais)
+              {t('excitationTension.title')}
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
-                Spécialisés dans les systèmes d'<strong>excitation d'alternateurs</strong>, nous maîtrisons l'ensemble de la chaîne de régulation pour garantir la performance et la fiabilité de vos installations.
-              </p>
-              <p>
-                <strong>Solution sur mesure</strong> : Nous intégrons des régulateurs des plus grandes marques dans des armoires neuves ou modernisons vos équipements sur site.
-              </p>
+              <p>{t('excitationTension.p1')}</p>
+              <p>{t('excitationTension.p2')}</p>
             </div>
           </div>
         </div>
@@ -179,37 +129,19 @@ export default function RegulationTensionExcitationPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl border-2 border-gray-200 p-12 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Armoires d'Excitation Statique : Fabrication et Maîtrise
+              {t('armoiresExcitation.title')}
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
-                Nous concevons et fabriquons nos propres armoires d'excitation statique, offrant une solution parfaitement adaptée à vos besoins.
-              </p>
+              <p>{t('armoiresExcitation.intro')}</p>
               <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="text-rose-600 flex-shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong>Puissance :</strong> Jusqu'à 1000 Adc
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-rose-600 flex-shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong>Configuration :</strong> Ponts redresseurs simples ou redondants pour assurer une continuité de service optimale
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-rose-600 flex-shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong>Composants :</strong> Produits sourcés auprès de fabricants européens de premier plan, gage de robustesse et de conformité
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-rose-600 flex-shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong>Régulation de tension :</strong> Nous proposons des régulateurs dédiés ou des algorithmes de régulation maison intégrés dans des automates programmables (API), développés par nos ingénieurs
-                  </div>
-                </li>
+                {armoiresExcitationItems.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="text-rose-600 flex-shrink-0 mt-1" size={20} />
+                    <div>
+                      <strong>{item.title} :</strong> {item.description}
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -221,17 +153,17 @@ export default function RegulationTensionExcitationPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-12 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Technologie et Service Clé en Main
+              {t('technologieService.title')}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-8">
-              Notre expertise ne se limite pas au matériel. Nous vous fournissons une solution complète et opérationnelle.
+              {t('technologieService.intro')}
             </p>
             
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Mise en Service
+              {t('technologieService.miseEnService.title')}
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Nous réalisons l'ensemble du paramétrage et de la mise en service pour garantir un fonctionnement optimal et sécurisé de votre équipement.
+              {t('technologieService.miseEnService.description')}
             </p>
           </div>
         </div>
@@ -241,7 +173,7 @@ export default function RegulationTensionExcitationPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Points Forts
+            {t('pointsForts.title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {pointsForts.map((point, index) => (
@@ -252,7 +184,7 @@ export default function RegulationTensionExcitationPage() {
                 <div className="flex items-center gap-3 mb-3">
                   <Shield size={24} className="text-rose-600" />
                   <h3 className="text-xl font-bold text-gray-900">
-                    {point.titre}
+                    {point.title}
                   </h3>
                 </div>
                 <p className="text-gray-600">
@@ -273,11 +205,13 @@ export default function RegulationTensionExcitationPage() {
               <div className="flex items-center gap-3 mb-6">
                 <Gauge size={32} className="text-purple-600" />
                 <h2 className="text-2xl font-bold text-gray-900">
-                  Fonctionnalité de notre régulateur propriétaire
+                  {t('fonctionnalitesRegulateur.title')}
                 </h2>
               </div>
               
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Mode de régulation :</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                {t('fonctionnalitesRegulateur.modeRegulation.title')}
+              </h3>
               <ul className="space-y-2 mb-6">
                 {fonctionnalitesRegulateur.modeRegulation.map((fonc, index) => (
                   <li key={index} className="flex items-start gap-2">
@@ -287,7 +221,9 @@ export default function RegulationTensionExcitationPage() {
                 ))}
               </ul>
 
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Autres fonctionnalités :</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                {t('fonctionnalitesRegulateur.autresFonctionnalites.title')}
+              </h3>
               <ul className="space-y-2">
                 {fonctionnalitesRegulateur.autresFonctionnalites.map((fonc, index) => (
                   <li key={index} className="flex items-start gap-2">
@@ -303,7 +239,7 @@ export default function RegulationTensionExcitationPage() {
               <div className="flex items-center gap-3 mb-6">
                 <AlertCircle size={32} className="text-orange-600" />
                 <h2 className="text-2xl font-bold text-gray-900">
-                  Vos problématiques
+                  {t('problematiques.title')}
                 </h2>
               </div>
               <ul className="space-y-3">
@@ -313,7 +249,6 @@ export default function RegulationTensionExcitationPage() {
                     <span className="text-gray-700">{prob}</span>
                   </li>
                 ))}
-                <li className="text-gray-700 mt-4">Etc.</li>
               </ul>
             </div>
           </div>
@@ -329,7 +264,7 @@ export default function RegulationTensionExcitationPage() {
               <div className="flex items-center gap-3 mb-6">
                 <Wrench size={32} className="text-green-600" />
                 <h2 className="text-2xl font-bold text-gray-900">
-                  Systèmes régulateur pour une traçabilité
+                  {t('systemesRegulateur.title')}
                 </h2>
               </div>
               <ul className="space-y-3">
@@ -347,7 +282,7 @@ export default function RegulationTensionExcitationPage() {
               <div className="flex items-center gap-3 mb-6">
                 <Zap size={32} className="text-blue-600" />
                 <h2 className="text-2xl font-bold text-gray-900">
-                  Services proposés
+                  {t('servicesPropose.title')}
                 </h2>
               </div>
               <ul className="space-y-3">
@@ -368,16 +303,16 @@ export default function RegulationTensionExcitationPage() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl p-12 text-center shadow-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Besoin d'une solution d'excitation ou de régulation ?
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-rose-50 mb-8">
-              Contactez-nous pour un dimensionnement adapté à votre alternateur
+              {t('cta.subtitle')}
             </p>
             <Link 
               href="/contact"
               className="inline-block bg-white text-rose-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
             >
-              Obtenir un devis
+              {t('cta.button')}
             </Link>
           </div>
         </div>
