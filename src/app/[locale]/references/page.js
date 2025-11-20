@@ -3,31 +3,62 @@
 import { MapPin, Calendar } from 'lucide-react';
 import { useState } from 'react';
 import projectsData from './projects-data.json';
+import projectsDataEN from './projects-data-EN.json';
+import projectsDataES from './projects-data-ES.json';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function ReferencesPage() {
   const t = useTranslations('references');
+  const locale = useLocale();
   
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedCountry, setSelectedCountry] = useState('all');
   const [selectedPower, setSelectedPower] = useState('all');
   const [selectedType, setSelectedType] = useState('all');
+  const [selectedTask, setSelectedTask] = useState('all');
   
-  const projects = projectsData;
+  // Sélectionne les données selon la langue
+  const getProjectsData = () => {
+    switch(locale) {
+      case 'en':
+        return projectsDataEN;
+      case 'es':
+        return projectsDataES;
+      default:
+        return projectsData;
+    }
+  };
+  
+  const projects = getProjectsData();
 
+  // Extraction de toutes les tâches uniques
+  const getAllTasks = () => {
+    const tasksSet = new Set();
+    projects.forEach(p => {
+      if (p.task) {
+        Object.values(p.task).forEach(task => {
+          if (task) tasksSet.add(task);
+        });
+      }
+    });
+    return Array.from(tasksSet).sort();
+  };
   const years = ['all', ...Array.from(new Set(projects.map(p => p.year))).sort((a, b) => b - a)];
   const countries = ['all', ...Array.from(new Set(projects.map(p => p.country))).sort()];
   const powers = ['all', ...Array.from(new Set(projects.map(p => p.power))).sort()];
   const types = ['all', ...Array.from(new Set(projects.map(p => p.type))).sort()];
+  const tasks = ['all', ...getAllTasks()];
   
   const filteredProjects = projects.filter(p => {
     const yearMatch = selectedYear === 'all' || p.year === parseInt(selectedYear);
     const countryMatch = selectedCountry === 'all' || p.country === selectedCountry;
     const powerMatch = selectedPower === 'all' || p.power === selectedPower;
     const typeMatch = selectedType === 'all' || p.type === selectedType;
-    return yearMatch && countryMatch && powerMatch && typeMatch;
+    const taskMatch = selectedTask === 'all' || (p.task && Object.values(p.task).includes(selectedTask));
+    return yearMatch && countryMatch && powerMatch && typeMatch && taskMatch;
   });
 
   return (
@@ -97,8 +128,8 @@ export default function ReferencesPage() {
                   {t('projectsList')} ({filteredProjects.length})
                 </h3>
                 
-                {/* Filtres en grille responsive */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Filtres en grille responsive - maintenant avec 5 filtres */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                   {/* Filtre Année */}
                   <select 
                     value={selectedYear}
@@ -146,6 +177,18 @@ export default function ReferencesPage() {
                       <option key={type} value={type}>{type}</option>
                     ))}
                   </select>
+                  
+                  {/* Filtre Tâches */}
+                  <select 
+                    value={selectedTask}
+                    onChange={(e) => setSelectedTask(e.target.value)}
+                    className="bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-2 text-gray-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  >
+                    <option value="all">{t('allTasks')}</option>
+                    {tasks.filter(t => t !== 'all').map(task => (
+                      <option key={task} value={task}>{task}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
               
@@ -180,7 +223,7 @@ export default function ReferencesPage() {
                           <span className="text-orange-500 font-bold text-lg">{project.year}</span>
                           <h4 className="font-bold text-gray-900 text-lg">{project.name}</h4>
                         </div>
-                        <div className="flex flex-wrap gap-3 text-sm">
+                        <div className="flex flex-wrap gap-3 text-sm mb-3">
                           <span className="text-gray-600 flex items-center gap-1">
                             <MapPin size={14} className="text-green-500" />
                             {project.country}
@@ -192,6 +235,21 @@ export default function ReferencesPage() {
                             {project.type}
                           </span>
                         </div>
+                        {/* Affichage des tâches */}
+                        {project.task && Object.keys(project.task).length > 0 && (
+                          <div className="flex flex-wrap gap-2">
+                            {Object.values(project.task).map((task, taskIndex) => (
+                              task && (
+                                <span 
+                                  key={taskIndex}
+                                  className="bg-blue-50 border border-blue-300 text-blue-700 px-2 py-1 rounded-md text-xs font-medium"
+                                >
+                                  {task}
+                                </span>
+                              )
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -281,7 +281,7 @@ export default function HomePage() {
               <div className="text-center group">
                 <div className="bg-white p-8 rounded-2xl border-2 border-white/50 group-hover:border-white transition-all shadow-lg group-hover:shadow-xl">
                   <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-400 mb-3">
-                    <CountUpAnimation end={40} suffix="+" />
+                    <CountUpAnimation end={80} suffix="+" />
                   </div>
                   <div className="text-gray-600 font-semibold text-lg">{tHero('projects')}</div>
                 </div>
