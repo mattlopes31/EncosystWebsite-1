@@ -3,6 +3,7 @@
 import { Shield, Check, Zap, AlertTriangle, ArrowLeft, Activity, Calculator, Settings } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 function ImageCarousel({ images, alt }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,71 +52,13 @@ function ImageCarousel({ images, alt }) {
 }
 
 export default function ProtectionsPage() {
-  const equipementsCritiques = [
-    'Alternateurs',
-    'Moteurs',
-    'Transformateurs de puissance et de distribution',
-    'Lignes et câbles d\'alimentation'
-  ];
-
-  const etudesIngenierie = [
-    {
-      titre: 'Calcul des courants de court-circuit',
-      description: 'selon la norme CEI 60909'
-    },
-    {
-      titre: 'Simulation et coordination des protections',
-      description: 'à l\'aide du logiciel de référence ETAP'
-    },
-    {
-      titre: 'Rédaction de dossiers techniques complets',
-      description: '(notes de calcul, rapports d\'étude, courbes de déclenchement)'
-    }
-  ];
-
-  const configurationTests = [
-    {
-      titre: 'Configuration et réglage précis',
-      description: 'des paramètres des relais'
-    },
-    {
-      titre: 'Tests et validation en atelier',
-      description: 'sur banc d\'essai pour pré-valider les fonctionnalités'
-    },
-    {
-      titre: 'Mise en service et tests sur site',
-      description: 'avec valise d\'injection secondaire pour la vérification finale de la chaîne de protection'
-    }
-  ];
-
-  const specifications = [
-    'Conformes normes IEC 60255 et IEEE',
-    'Relais numériques haute performance',
-    'Protection différentielle (87)',
-    'Protection de distance (21)',
-    'Protection de surcharge (49/51)',
-    'Protection terre (50N/51N)',
-    'Enregistreur de perturbographie',
-    'Communication IEC 61850'
-  ];
-
-  const typesProtections = [
-    {
-      type: 'Alternateurs',
-      description: 'Protection complète : différentielle, surcharge thermique, déséquilibre, perte d\'excitation, retour de puissance',
-      fonctions: 'ANSI 87G, 49, 46, 40, 32, 64'
-    },
-    {
-      type: 'Transformateurs',
-      description: 'Protection différentielle, masse cuve, Buchholz, surcharge thermique, protection terre',
-      fonctions: 'ANSI 87T, 63, 49, 50N/51N'
-    },
-    {
-      type: 'Lignes Électriques',
-      description: 'Protection de distance, surintensité directionnelle, défaut terre, réenclencheur automatique',
-      fonctions: 'ANSI 21, 67, 50N/51N, 79'
-    }
-  ];
+  const t = useTranslations('products.protections.page');
+  
+  const equipementsCritiques = t.raw('equipementsCritiques.items');
+  const etudesIngenierie = t.raw('etudesIngenierie.items');
+  const configurationTests = t.raw('configurationTests.items');
+  const typesProtections = t.raw('typesProtections.items');
+  const specifications = t.raw('specifications.items');
 
   const images = [
     '/imagesV2/Protetctions/relais de protection.jpg',
@@ -131,7 +74,7 @@ export default function ProtectionsPage() {
           className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
         >
           <ArrowLeft size={20} />
-          Retour aux produits
+          {t('backButton')}
         </Link>
       </div>
 
@@ -144,7 +87,7 @@ export default function ProtectionsPage() {
             </div>
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
-                Expertise en Ingénierie et Mise en Service de Systèmes de Protection Électrique
+                {t('mainTitle')}
               </h1>
             </div>
           </div>
@@ -155,7 +98,7 @@ export default function ProtectionsPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-            <ImageCarousel images={images} alt="Protections électriques" />
+            <ImageCarousel images={images} alt={t('mainTitle')} />
           </div>
         </div>
       </section>
@@ -165,7 +108,7 @@ export default function ProtectionsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl border-2 border-cyan-200 p-12 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Notre savoir-faire couvre l'ensemble des équipements critiques :
+              {t('equipementsCritiques.title')}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {equipementsCritiques.map((equip, index) => (
@@ -186,11 +129,11 @@ export default function ProtectionsPage() {
             <div className="flex items-center gap-3 mb-6">
               <Calculator size={40} className="text-cyan-600" />
               <h2 className="text-3xl font-bold text-gray-900">
-                1. Études d'Ingénierie et de Coordination des Protections
+                {t('etudesIngenierie.title')}
               </h2>
             </div>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Nous réalisons des études de calcul approfondies pour assurer une parfaite sélectivité de vos protections :
+              {t('etudesIngenierie.intro')}
             </p>
             <div className="space-y-6">
               {etudesIngenierie.map((etude, index) => (
@@ -218,11 +161,11 @@ export default function ProtectionsPage() {
             <div className="flex items-center gap-3 mb-6">
               <Settings size={40} className="text-blue-600" />
               <h2 className="text-3xl font-bold text-gray-900">
-                2. Configuration, Tests et Mise en Service
+                {t('configurationTests.title')}
               </h2>
             </div>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Notre intervention assure la conformité entre l'étude théorique et la réalité terrain :
+              {t('configurationTests.intro')}
             </p>
             <div className="space-y-6">
               {configurationTests.map((config, index) => (
@@ -247,7 +190,7 @@ export default function ProtectionsPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Solutions de Protection
+            {t('typesProtections.title')}
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {typesProtections.map((protection, index) => (
@@ -280,7 +223,7 @@ export default function ProtectionsPage() {
             <div className="flex items-center gap-3 mb-6">
               <Activity size={32} className="text-cyan-600" />
               <h2 className="text-2xl font-bold text-gray-900">
-                Spécifications Techniques
+                {t('specifications.title')}
               </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
@@ -295,22 +238,21 @@ export default function ProtectionsPage() {
         </div>
       </section>
 
-
       {/* CTA */}
       <section className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-12 text-center shadow-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Protégez vos équipements électriques
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-cyan-50 mb-8">
-              Assurez la sécurité et la fiabilité de votre installation
+              {t('cta.subtitle')}
             </p>
             <Link 
               href="/contact"
               className="inline-block bg-white text-cyan-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
             >
-              Demander une étude
+              {t('cta.button')}
             </Link>
           </div>
         </div>
@@ -318,4 +260,3 @@ export default function ProtectionsPage() {
     </main>
   );
 }
-

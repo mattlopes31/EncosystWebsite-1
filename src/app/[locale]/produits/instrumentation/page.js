@@ -2,64 +2,30 @@
 
 import { Zap, Check, Thermometer, Gauge, ArrowLeft, Waves, Wind } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function InstrumentationPage() {
-  const specifications = [
-    'Capteurs industriels certifiés',
-    'Calibration en laboratoire',
-    'Protection IP65 à IP68',
-    'Signaux 4-20mA / 0-10V / numérique',
-    'Compatible automates et SCADA',
-    'Installation complète clé en main',
-    'Documentation technique fournie',
-    'Formation des équipes locales'
-  ];
+  const t = useTranslations('products.instrumentation.page');
+  
+  const specifications = t.raw('specifications.items');
+  const typesInstrumentation = t.raw('typesInstrumentation.items');
+  const essais = t.raw('essais.items');
+  const applications = t.raw('applications.items');
 
-  const typesInstrumentation = [
-    {
-      categorie: 'Niveaux',
-      capteurs: ['Radar', 'Ultrason', 'Flotteur', 'Piézométrique'],
-      icon: Waves
-    },
-    {
-      categorie: 'Température',
-      capteurs: ['PT100', 'Thermocouple', 'RTD', 'Infrarouge'],
-      icon: Thermometer
-    },
-    {
-      categorie: 'Pression',
-      capteurs: ['Piézorésistif', 'Capacitif', 'Différentiel'],
-      icon: Gauge
-    },
-    {
-      categorie: 'Débit',
-      capteurs: ['Électromagnétique', 'Ultrason', 'Vortex', 'Canal ouvert'],
-      icon: Wind
-    }
-  ];
-
-
-  const essais = [
-    'Vérification de la calibration',
-    'Test des boucles 4-20mA',
-    'Validation des mesures',
-    'Test de communication',
-    'Vérification des alarmes',
-    'Test d\'étanchéité',
-    'Essai fonctionnel complet',
-    'Documentation as-built'
-  ];
-
-  const applications = [
-    'Mesure de niveau dans les barrages',
-    'Contrôle de débit en canal ouvert',
-    'Mesure de débit en conduite forcée',
-    'Surveillance de température paliers',
-    'Mesure de vibration des groupes',
-    'Position des vannes et clapets',
-    'Vitesse de rotation turbine',
-    'Pression hydraulique circuits'
-  ];
+  const iconMap = {
+    'Niveaux': Waves,
+    'Levels': Waves,
+    'Niveles': Waves,
+    'Température': Thermometer,
+    'Temperature': Thermometer,
+    'Temperatura': Thermometer,
+    'Pression': Gauge,
+    'Pressure': Gauge,
+    'Presión': Gauge,
+    'Débit': Wind,
+    'Flow': Wind,
+    'Caudal': Wind
+  };
 
   return (
     <main className="pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white">
@@ -69,7 +35,7 @@ export default function InstrumentationPage() {
           className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
         >
           <ArrowLeft size={20} />
-          Retour aux produits
+          {t('backButton')}
         </Link>
       </div>
 
@@ -82,10 +48,10 @@ export default function InstrumentationPage() {
             </div>
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
-                Instrumentation
+                {t('mainTitle')}
               </h1>
               <p className="text-xl text-gray-600 mt-2">
-                Fourniture, installation et mise en service
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -98,7 +64,7 @@ export default function InstrumentationPage() {
           <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             <img 
               src="/images/20231211_074352.jpg"
-              alt="Instrumentation sur site"
+              alt={t('mainTitle')}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -111,21 +77,13 @@ export default function InstrumentationPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl border-2 border-gray-200 p-12 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Solution Complète d'Instrumentation
+              {t('intro.title')}
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
-                Nous assurons la <strong>fourniture, installation et mise en service</strong> de tout type d'instrumentation pour installations hydroélectriques. Notre expertise couvre l'ensemble de la chaîne, depuis le choix des capteurs jusqu'à leur intégration dans votre système de contrôle.
-              </p>
-              <p>
-                Notre gamme comprend des instruments de mesure pour : <strong>niveaux</strong> (barrages, prises d'eau, canaux), <strong>températures</strong> (paliers, enroulements, huile), <strong>positions</strong> (vannes, clapets, distributeur), <strong>vitesses</strong> (rotation turbine), <strong>vibrations</strong> (surveillance des groupes), <strong>débits</strong> (canal ouvert et conduite forcée).
-              </p>
-              <p>
-                Tous nos capteurs sont de <strong>qualité industrielle</strong>, sélectionnés auprès de fabricants reconnus. Ils sont calibrés en laboratoire avant livraison et fournis avec leurs certificats de calibration.
-              </p>
-              <p>
-                L'<strong>installation</strong> est réalisée par nos équipes ou nos partenaires locaux qualifiés. Nous assurons le câblage complet jusqu'aux armoires de contrôle, les tests de mise en service et la formation des opérateurs.
-              </p>
+              <p>{t('intro.p1')}</p>
+              <p>{t('intro.p2')}</p>
+              <p>{t('intro.p3')}</p>
+              <p>{t('intro.p4')}</p>
             </div>
           </div>
         </div>
@@ -135,11 +93,11 @@ export default function InstrumentationPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Types de Capteurs
+            {t('typesInstrumentation.title')}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {typesInstrumentation.map((type, index) => {
-              const Icon = type.icon;
+              const Icon = iconMap[type.categorie] || Zap;
               return (
                 <div 
                   key={index}
@@ -171,7 +129,7 @@ export default function InstrumentationPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl border-2 border-cyan-200 p-12 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Applications
+              {t('applications.title')}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {applications.map((application, index) => (
@@ -191,7 +149,7 @@ export default function InstrumentationPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-8 shadow-lg">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Spécifications
+                {t('specifications.title')}
               </h2>
               <ul className="space-y-3">
                 {specifications.map((spec, index) => (
@@ -205,7 +163,7 @@ export default function InstrumentationPage() {
 
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 shadow-lg">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Tests et Validation
+                {t('essais.title')}
               </h2>
               <ul className="space-y-3">
                 {essais.map((essai, index) => (
@@ -220,22 +178,21 @@ export default function InstrumentationPage() {
         </div>
       </section>
 
-
       {/* CTA */}
       <section className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-12 text-center shadow-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Besoin d'instrumentation ?
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-cyan-50 mb-8">
-              Nous vous accompagnons dans le choix et l'installation de vos capteurs
+              {t('cta.subtitle')}
             </p>
             <Link 
               href="/contact"
               className="inline-block bg-white text-cyan-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
             >
-              Demander un devis
+              {t('cta.button')}
             </Link>
           </div>
         </div>
@@ -243,4 +200,3 @@ export default function InstrumentationPage() {
     </main>
   );
 }
-
