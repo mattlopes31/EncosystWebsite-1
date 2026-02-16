@@ -6,8 +6,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Contrôle Commande pour Centrales Hydroélectriques",
-    "subtitle": "Spécialiste dans la conception de systèmes de contrôle commande pour centrales hydroélectriques de petite et moyenne capacité depuis 2011",
+    "title": "Spécialiste dans la conception de systèmes de contrôle commande pour centrales hydroélectriques de petite et moyenne capacité depuis 2011.",
+    "subtitle": "Nous apportons notre expertise au développement de solutions innovantes et sur mesure pour la rénovation de système existants ou pour la réalisation de nouveaux projets.",
     "cta": "Découvrir nos solutions",
     "experience": "ans d'expérience",
     "projects": "projets réalisés",
@@ -83,11 +83,11 @@
   "products": {
     "automatisme": {
       "title": "Automatisme",
-      "subtitle": "Armoires de Contrôle Commande",
-      "description": "Conception, fabrication et d'amoires de contrôle commande et tableau de distribution conçu sur mesure pour chaque projet.",
+      "subtitle": "Conception, fabrication et programmation d'armoires de contrôle commande et tableau de distributions conçu sur mesure pour chaque projet",
+      "description": "Conception, fabrication et programmation d'armoires de contrôle commande et tableau de distributions conçu sur mesure pour chaque projet",
       "page": {
         "backButton": "Retour aux produits",
-        "mainTitle": "Conception, fabrication et d'amoires de contrôle commande et tableau de distribution conçu sur mesure pour chaque projet.",
+        "mainTitle": "Automatisme",
         "intro": {
           "p1": "Nos armoires de contrôle commande sont conçues et fabriquées sur mesure pour répondre aux exigences spécifiques de chaque projet hydroélectrique. Chaque armoire est le résultat d'une ingénierie dédiée intégrant les dernières technologies d'automatisation.",
           "p2": "Nous assurons la conception complète depuis les études électriques jusqu'à la fabrication dans nos ateliers, en passant par la programmation des automates et interfaces graphiques. Toutes les armoires subissent systématiquement une vérification et de tests en atelier selon un protocole déterminé avant expédition.",

@@ -6,8 +6,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Control Systems for Hydroelectric Power Plants",
-    "subtitle": "Specialist in the design of control command systems for small and medium capacity hydroelectric power plants since 2011",
+    "title": "Specialist in the design of control command systems for small and medium capacity hydroelectric power plants since 2011.",
+    "subtitle": "We bring our expertise to the development of innovative and tailor-made solutions for the renovation of existing systems or for the realization of new projects.",
     "cta": "Discover our solutions",
     "experience": "years of experience",
     "projects": "completed projects",
@@ -83,11 +83,11 @@
   "products": {
     "automatisme": {
       "title": "Automation",
-      "subtitle": "Control Command Cabinets",
-      "description": "Personal clave: Un equipo más reducido que garantiza una mayor flexibilidad y una eficiencia máxima.",
+      "subtitle": "Design, manufacturing and programming of control command cabinets and distribution boards designed to measure for each project",
+      "description": "Design, manufacturing and programming of control command cabinets and distribution boards designed to measure for each project",
       "page": {
         "backButton": "Back to products",
-        "mainTitle": "Custom solutions for operating your installations",
+        "mainTitle": "Automation",
         "intro": {
           "p1": "Our control command cabinets are custom designed and manufactured to meet the specific requirements of each hydroelectric project. Each cabinet is the result of dedicated engineering integrating the latest automation technologies.",
           "p2": "We provide complete design from electrical studies to manufacturing in our workshops, including PLC programming and graphical interfaces.",

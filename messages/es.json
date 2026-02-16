@@ -6,8 +6,8 @@
     "contact": "Contacto"
   },
   "hero": {
-    "title": "Control y Comando para Centrales Hidroeléctricas",
-    "subtitle": "Especialista en el diseño de sistemas de control y mando para centrales hidroeléctricas de pequeña y mediana capacidad desde 2011",
+    "title": "Especialista en el diseño de sistemas de control y mando para centrales hidroeléctricas de pequeña y mediana capacidad desde 2011.",
+    "subtitle": "Aportamos nuestra experiencia al desarrollo de soluciones innovadoras y a medida para la renovación de sistemas existentes o para la realización de nuevos proyectos.",
     "cta": "Descubrir nuestras soluciones",
     "experience": "años de experiencia",
     "projects": "proyectos realizados",
@@ -83,11 +83,11 @@
   "products": {
     "automatisme": {
       "title": "Automatización",
-      "subtitle": "Armarios de Control y Comando",
-      "description": "Diseño, fabricación y diseño personalizado de tableros de control y distribución para cada proyecto.",
+      "subtitle": "Diseño, fabricación y programación de armarios de control y mando y cuadros de distribución diseñados a medida para cada proyecto",
+      "description": "Diseño, fabricación y programación de armarios de control y mando y cuadros de distribución diseñados a medida para cada proyecto",
       "page": {
         "backButton": "Volver a productos",
-        "mainTitle": "Soluciones a medida para el control de sus instalaciones",
+        "mainTitle": "Automatización",
         "intro": {
           "p1": "Nuestros armarios de control y mando se diseñan y fabrican a medida para cumplir con los requisitos específicos de cada proyecto hidroeléctrico. Cada armario es el resultado de una ingeniería dedicada que integra las últimas tecnologías de automatización.",
           "p2": "Proporcionamos diseño completo desde estudios eléctricos hasta la fabricación en nuestros talleres, incluyendo la programación de PLCs e interfaces gráficas.",
