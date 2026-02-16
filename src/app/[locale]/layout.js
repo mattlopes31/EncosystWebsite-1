@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 import './globals.css';
 
 export const metadata = {
@@ -8,16 +9,14 @@ export const metadata = {
   description: 'Specialist in control and command systems for hydroelectric power plants since 2011.',
 };
 
-const locales = ['fr', 'en', 'es'];
-
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   
-  if (!locales.includes(locale)) {
+  if (!routing.locales.includes(locale)) {
     notFound();
   }
 
