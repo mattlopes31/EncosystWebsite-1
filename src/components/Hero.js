@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { ChevronRight, ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
