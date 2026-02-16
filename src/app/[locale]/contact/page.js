@@ -18,12 +18,15 @@ export default function ContactPage() {
   });
   
   const [status, setStatus] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
+    setErrorMessage('');
     
     try {
+      // L'API de contact n'est pas liée à la locale
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -37,10 +40,19 @@ export default function ContactPage() {
         setFormData({ name: '', email: '', phone: '', message: '' });
         setTimeout(() => setStatus(''), 5000);
       } else {
+        let serverError = '';
+        try {
+          const data = await response.json();
+          serverError = data?.error || '';
+        } catch {
+          // ignore JSON parse errors
+        }
+        setErrorMessage(serverError);
         setStatus('error');
       }
     } catch (error) {
       console.error('Erreur:', error);
+      setErrorMessage('');
       setStatus('error');
     }
   };
@@ -71,8 +83,8 @@ export default function ContactPage() {
             <div className="space-y-6">
               <div className="bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-lg">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-green-50 border-2 border-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-green-500" size={28} />
+                  <div className="w-16 h-16 bg-[#8DC63E]/10 border-2 rounded-xl flex items-center justify-center flex-shrink-0" style={{ borderColor: '#8DC63E' }}>
+                    <MapPin size={28} style={{ color: '#8DC63E' }} />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-gray-900 mb-3">{t('address')}</h3>
@@ -107,14 +119,17 @@ export default function ContactPage() {
 
               <div className="bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-lg">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-green-50 border-2 border-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-green-500" size={28} />
+                  <div className="w-16 h-16 bg-[#8DC63E]/10 border-2 rounded-xl flex items-center justify-center flex-shrink-0" style={{ borderColor: '#8DC63E' }}>
+                    <Mail size={28} style={{ color: '#8DC63E' }} />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-gray-900 mb-3">{t('email')}</h3>
                     <a 
                       href="mailto:contact@encosyst.fr"
-                      className="text-gray-600 hover:text-green-500 transition-colors"
+                      className="text-gray-600 transition-colors"
+                      style={{ color: '#8DC63E' }}
+                      onMouseEnter={(e) => e.target.style.color = '#7AB62F'}
+                      onMouseLeave={(e) => e.target.style.color = '#8DC63E'}
                     >
                       contact@encosyst.fr
                     </a>
@@ -135,7 +150,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl border-2 border-green-200 shadow-lg">
+              <div className="bg-gradient-to-br p-8 rounded-2xl border-2 shadow-lg" style={{ background: 'linear-gradient(to bottom right, rgba(141, 198, 62, 0.1), white)', borderColor: '#8DC63E' }}>
                 <h3 className="font-bold text-lg text-gray-900 mb-4">{t('legalInfo')}</h3>
                 <div className="space-y-2 text-sm text-gray-600">
                   <p><span className="font-medium">{t('responsible')} :</span> M. Laurent LOPES</p>
@@ -152,16 +167,16 @@ export default function ContactPage() {
               
               {/* Message de succès */}
               {status === 'success' && (
-                <div className="mb-6 p-4 bg-green-50 border-2 border-green-500 rounded-lg flex items-center gap-3">
-                  <CheckCircle className="text-green-500" size={24} />
-                  <p className="text-green-700 font-medium">{t('success')}</p>
+                <div className="mb-6 p-4 rounded-lg flex items-center gap-3" style={{ backgroundColor: 'rgba(141, 198, 62, 0.1)', border: '2px solid #8DC63E' }}>
+                  <CheckCircle size={24} style={{ color: '#8DC63E' }} />
+                  <p className="font-medium" style={{ color: '#7AB62F' }}>{t('success')}</p>
                 </div>
               )}
 
               {/* Message d'erreur */}
               {status === 'error' && (
                 <div className="mb-6 p-4 bg-red-50 border-2 border-red-500 rounded-lg">
-                  <p className="text-red-700 font-medium">{t('error')}</p>
+                  <p className="text-red-700 font-medium">{errorMessage || t('error')}</p>
                 </div>
               )}
 
