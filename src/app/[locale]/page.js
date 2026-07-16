@@ -3,12 +3,12 @@
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { Zap, Globe, Award, Shield, Gauge, Database, Cpu, Activity, ChevronRight, Check, Brain, CircuitBoard, Monitor } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 
-function CountUpAnimation({ end, duration = 1500, suffix = '' }) {
+function CountUpAnimation({ end, duration = 1500, suffix = '', prefix = '' }) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
@@ -47,7 +47,7 @@ function CountUpAnimation({ end, duration = 1500, suffix = '' }) {
     return () => observer.disconnect();
   }, [end, duration, hasAnimated]);
 
-  return <span ref={ref}>{count}{suffix}</span>;
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
 }
 
 function ImageCarousel({ images, alt }) {
@@ -131,9 +131,9 @@ export default function HomePage() {
       icon: Monitor,
       detailKeys: ['scada.details.detail1', 'scada.details.detail2', 'scada.details.detail3', 'scada.details.detail4'],
       images: [
-        '/images/scada.png',
-        '/imagesV2/SCADA/architecture.png',
-        '/images/scada3.png'
+        '/imagesV2/SCADA/SCADA HEPP.png',
+        '/imagesV2/SCADA/SCADA SLD.png',
+        '/imagesV2/SCADA/SCADA Toma.png'
       ],
       link: '/produits/scada'
     },
@@ -154,7 +154,8 @@ export default function HomePage() {
       icon: Gauge,
       detailKeys: ['vitesse.details.detail1', 'vitesse.details.detail2', 'vitesse.details.detail3'],
       images: [
-        '/images/Imagescontour/HPU Speed governor.png',
+        '/imagesV2/Régulateurs de vitesse/Regulateur de vitesse.jpg',
+        '/imagesV2/Régulateurs de vitesse/hpus.jpg',
         '/imagesV2/Régulateurs de vitesse/Retrofit régulateur de vitesse.png'
       ],
       link: '/produits/regulationVitesse'
@@ -165,8 +166,8 @@ export default function HomePage() {
       icon: Zap,
       detailKeys: ['tension.details.detail1', 'tension.details.detail2', 'tension.details.detail3'],
       images: [
-        'imagesV2/Régulateurs de tension/excitation statique (2).jpg',
-        'imagesV2/Régulateurs de tension/Static excitation system FAT.jpg',
+        '/imagesV2/Régulateurs de tension/excitation statique (2).jpg',
+        '/imagesV2/Régulateurs de tension/Static excitation system FAT.jpg',
       ],
       link: '/produits/regulationTensionetExcitation'
     },
@@ -176,9 +177,9 @@ export default function HomePage() {
       icon: Shield,
       detailKeys: ['protections.details.detail1', 'protections.details.detail2', 'protections.details.detail3'],
       images: [
-        'imagesV2/Protetctions/relais de protection.jpg',
-        'imagesV2/Protetctions/protection relay calculation.jpg',
-        'imagesV2/Protetctions/Armoire protection.jpg'
+        '/imagesV2/Protetctions/relais de protection.jpg',
+        '/imagesV2/Protetctions/protection relay calculation.jpg',
+        '/imagesV2/Protetctions/Armoire protection.jpg'
       ],
       link: '/produits/protections'
     },
@@ -188,7 +189,7 @@ export default function HomePage() {
       icon: Gauge,
       detailKeys: ['instrumentation.details.detail1', 'instrumentation.details.detail2', 'instrumentation.details.detail3'],
       images: [
-        'imagesV2/Instrumentation/Instrumentation.jpg'
+        '/images/20231211_074352.jpg'
       ],
       link: '/produits/instrumentation'
     }
@@ -261,7 +262,7 @@ export default function HomePage() {
               <div className="text-center group">
                 <div className="bg-white p-8 rounded-2xl border-2 border-white/50 group-hover:border-white transition-all shadow-lg group-hover:shadow-xl">
                   <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-3">
-                    <CountUpAnimation end={14} />
+                    <CountUpAnimation end={15} />
                   </div>
                   <div className="text-gray-600 font-semibold text-lg">{tHero('experience')}</div>
                 </div>
@@ -280,23 +281,23 @@ export default function HomePage() {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center group">
                 <div className="bg-white p-8 rounded-2xl border-2 border-white/50 group-hover:border-white transition-all shadow-lg group-hover:shadow-xl">
-                  <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-400 mb-3">
-                    <CountUpAnimation end={80} suffix="+" />
+                  <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-3">
+                    <CountUpAnimation end={80} prefix="+" />
                   </div>
                   <div className="text-gray-600 font-semibold text-lg">{tHero('projects')}</div>
                 </div>
               </div>
               <div className="text-center group">
                 <div className="bg-white p-8 rounded-2xl border-2 border-white/50 group-hover:border-white transition-all shadow-lg group-hover:shadow-xl">
-                  <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-400 mb-3">
-                    <CountUpAnimation end={320} />
+                  <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-3">
+                    <CountUpAnimation end={440} />
                   </div>
                   <div className="text-gray-600 font-semibold text-lg">{tHero('installedMW')}</div>
                 </div>
               </div>
               <div className="text-center group">
                 <div className="bg-white p-8 rounded-2xl border-2 border-white/50 group-hover:border-white transition-all shadow-lg group-hover:shadow-xl">
-                  <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-400 mb-3">
+                  <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-3">
                     <CountUpAnimation end={8} />
                   </div>
                   <div className="text-gray-600 font-semibold text-lg">{tHero('employees')}</div>

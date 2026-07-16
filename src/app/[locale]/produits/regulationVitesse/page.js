@@ -1,7 +1,7 @@
 'use client';
 
-import { Gauge, Check, Zap, Wrench, ArrowLeft, Settings, AlertCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Gauge, Check, Zap, ArrowLeft, Settings } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
@@ -55,14 +55,13 @@ export default function RegulationVitessePage() {
   const t = useTranslations('products.vitesse.page');
   
   const fonctionnalites = t.raw('fonctionnalites.items');
-  const sequences = t.raw('sequences.items');
-  const piecesReserves = t.raw('piecesReserve.items');
   const caracteristiques = t.raw('caracteristiques.items');
   const groupesHydrauliques = t.raw('groupesHydrauliques.items');
 
   const images = [
-    '/images/Imagescontour/HPU Speed governor.png',
-    '/images/20251024_162912.jpg'
+    '/imagesV2/Régulateurs de vitesse/Regulateur de vitesse.jpg',
+    '/imagesV2/Régulateurs de vitesse/hpus.jpg',
+    '/imagesV2/Régulateurs de vitesse/Retrofit régulateur de vitesse.png'
   ];
 
   return (
@@ -81,7 +80,7 @@ export default function RegulationVitessePage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl">
               <Gauge className="text-white" size={40} />
             </div>
             <div>
@@ -133,7 +132,7 @@ export default function RegulationVitessePage() {
             <div className="grid md:grid-cols-2 gap-4">
               {groupesHydrauliques.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
+                  <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                   <span className="text-gray-700">{item}</span>
                 </div>
               ))}
@@ -142,69 +141,23 @@ export default function RegulationVitessePage() {
         </div>
       </section>
 
-      {/* Pièces de Réserve */}
+      {/* Fonctionnalités */}
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
-              <Wrench size={32} className="text-orange-600" />
+              <Settings size={32} className="text-orange-600" />
               <h2 className="text-2xl font-bold text-gray-900">
-                {t('piecesReserve.title')}
+                {t('fonctionnalites.title')}
               </h2>
             </div>
-            <p className="text-gray-700 mb-4">
-              {t('piecesReserve.intro')}
-            </p>
-            <ul className="space-y-3">
-              {piecesReserves.map((piece, index) => (
-                <li key={index} className="flex items-start gap-3">
+            <div className="grid md:grid-cols-2 gap-3">
+              {fonctionnalites.map((fonc, index) => (
+                <div key={index} className="flex items-start gap-3">
                   <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-700">{piece}</span>
-                </li>
+                  <span className="text-gray-700">{fonc}</span>
+                </div>
               ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Fonctionnalités et Séquences */}
-      <section className="container mx-auto px-4 mb-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Fonctionnalités */}
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <Settings size={32} className="text-green-600" />
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('fonctionnalites.title')}
-                </h2>
-              </div>
-              <ul className="space-y-3">
-                {fonctionnalites.map((fonc, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-700">{fonc}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Séquences et essais */}
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-8 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <AlertCircle size={32} className="text-blue-600" />
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('sequences.title')}
-                </h2>
-              </div>
-              <ul className="space-y-3">
-                {sequences.map((seq, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-700">{seq}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
@@ -220,7 +173,7 @@ export default function RegulationVitessePage() {
             <div className="grid md:grid-cols-2 gap-6">
               {caracteristiques.map((carac, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
+                  <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                   <span className="text-gray-700 font-medium">{carac}</span>
                 </div>
               ))}
@@ -229,25 +182,6 @@ export default function RegulationVitessePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-12 text-center shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('cta.title')}
-            </h2>
-            <p className="text-xl text-green-50 mb-8">
-              {t('cta.subtitle')}
-            </p>
-            <Link 
-              href="/contact"
-              className="inline-block bg-white text-green-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
-            >
-              {t('cta.button')}
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

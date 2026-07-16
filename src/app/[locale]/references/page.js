@@ -19,6 +19,7 @@ export default function ReferencesPage() {
   const [selectedPower, setSelectedPower] = useState('all');
   const [selectedType, setSelectedType] = useState('all');
   const [selectedTask, setSelectedTask] = useState('all');
+  const [selectedImage, setSelectedImage] = useState(null);
   
   // Sélectionne les données selon la langue
   const getProjectsData = () => {
@@ -96,14 +97,14 @@ export default function ReferencesPage() {
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
                 <div className="flex items-center gap-3 p-4">
-                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500">
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-500">
                     <MapPin size={18} className="text-white" />
                   </span>
                   <span className="text-gray-800 font-medium">{t('newProject')}</span>
                 </div>
 
                 <div className="flex items-center gap-3 p-4">
-                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-500">
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500">
                     <MapPin size={18} className="text-white" />
                   </span>
                   <span className="text-gray-800 font-medium">{t('modernization')}</span>
@@ -201,7 +202,10 @@ export default function ReferencesPage() {
                     <div className="flex items-start gap-4 p-6">
                       {/* Image du projet */}
                       {project.src && project.src !== "" && project.src !== "images/" && (
-                        <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200">
+                        <div 
+                          className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200 cursor-pointer hover:opacity-80 transition-opacity"
+                          onClick={() => setSelectedImage(project.src)}
+                        >
                           <img
                             src={project.src}
                             alt={project.name}
@@ -225,7 +229,7 @@ export default function ReferencesPage() {
                         </div>
                         <div className="flex flex-wrap gap-3 text-sm mb-3">
                           <span className="text-gray-600 flex items-center gap-1">
-                            <MapPin size={14} className="text-green-500" />
+                            <MapPin size={14} className="text-orange-500" />
                             {project.country}
                           </span>
                           <span className="bg-green-50 border border-green-300 text-green-600 px-3 py-1 rounded-full font-medium">
@@ -287,6 +291,33 @@ export default function ReferencesPage() {
           </div>
         </div>
       </main>
+      
+      {/* Modal pour afficher l'image en grand */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-7xl max-h-full">
+            <img
+              src={selectedImage}
+              alt="Image agrandie"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors"
+              aria-label="Fermer"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </>
   );

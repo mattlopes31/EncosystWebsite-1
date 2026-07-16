@@ -1,7 +1,7 @@
 'use client';
 
-import { Shield, Check, Zap, AlertTriangle, ArrowLeft, Activity, Calculator, Settings } from 'lucide-react';
-import Link from 'next/link';
+import { Shield, Check, ArrowLeft, Calculator, Settings } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
@@ -57,8 +57,6 @@ export default function ProtectionsPage() {
   const equipementsCritiques = t.raw('equipementsCritiques.items');
   const etudesIngenierie = t.raw('etudesIngenierie.items');
   const configurationTests = t.raw('configurationTests.items');
-  const typesProtections = t.raw('typesProtections.items');
-  const specifications = t.raw('specifications.items');
 
   const images = [
     '/imagesV2/Protetctions/relais de protection.jpg',
@@ -82,7 +80,7 @@ export default function ProtectionsPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl">
               <Shield className="text-white" size={40} />
             </div>
             <div>
@@ -106,14 +104,14 @@ export default function ProtectionsPage() {
       {/* Notre savoir-faire */}
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl border-2 border-cyan-200 p-12 shadow-lg">
+          <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-12 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               {t('equipementsCritiques.title')}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {equipementsCritiques.map((equip, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <Check className="text-cyan-600 flex-shrink-0 mt-1" size={20} />
+                  <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                   <span className="text-gray-700 font-medium">{equip}</span>
                 </div>
               ))}
@@ -127,7 +125,7 @@ export default function ProtectionsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl border-2 border-gray-200 p-12 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
-              <Calculator size={40} className="text-cyan-600" />
+              <Calculator size={40} className="text-orange-600" />
               <h2 className="text-3xl font-bold text-gray-900">
                 {t('etudesIngenierie.title')}
               </h2>
@@ -137,9 +135,9 @@ export default function ProtectionsPage() {
             </p>
             <div className="space-y-6">
               {etudesIngenierie.map((etude, index) => (
-                <div key={index} className="bg-cyan-50 rounded-xl p-6 border-2 border-cyan-200">
+                <div key={index} className="bg-orange-50 rounded-xl p-6 border-2 border-orange-200">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white font-bold">
+                    <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white font-bold">
                       {index + 1}
                     </div>
                     <div>
@@ -159,7 +157,7 @@ export default function ProtectionsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl border-2 border-gray-200 p-12 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
-              <Settings size={40} className="text-blue-600" />
+              <Settings size={40} className="text-orange-600" />
               <h2 className="text-3xl font-bold text-gray-900">
                 {t('configurationTests.title')}
               </h2>
@@ -169,9 +167,9 @@ export default function ProtectionsPage() {
             </p>
             <div className="space-y-6">
               {configurationTests.map((config, index) => (
-                <div key={index} className="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
+                <div key={index} className="bg-orange-50 rounded-xl p-6 border-2 border-orange-200">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white font-bold">
+                    <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white font-bold">
                       {index + 1}
                     </div>
                     <div>
@@ -186,77 +184,7 @@ export default function ProtectionsPage() {
         </div>
       </section>
 
-      {/* Types de protections */}
-      <section className="container mx-auto px-4 mb-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            {t('typesProtections.title')}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {typesProtections.map((protection, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-xl border-2 border-gray-200 p-8 hover:border-cyan-500 transition-all shadow-lg hover:shadow-xl"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Shield className="text-white" size={32} />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {protection.type}
-                </h3>
-                <p className="text-gray-600 mb-3">
-                  {protection.description}
-                </p>
-                <div className="text-sm text-cyan-600 font-semibold bg-cyan-50 px-3 py-2 rounded-lg">
-                  {protection.fonctions}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Spécifications */}
-      <section className="container mx-auto px-4 mb-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl border-2 border-cyan-200 p-8 shadow-lg">
-            <div className="flex items-center gap-3 mb-6">
-              <Activity size={32} className="text-cyan-600" />
-              <h2 className="text-2xl font-bold text-gray-900">
-                {t('specifications.title')}
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              {specifications.map((spec, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-700">{spec}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-12 text-center shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('cta.title')}
-            </h2>
-            <p className="text-xl text-cyan-50 mb-8">
-              {t('cta.subtitle')}
-            </p>
-            <Link 
-              href="/contact"
-              className="inline-block bg-white text-cyan-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
-            >
-              {t('cta.button')}
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

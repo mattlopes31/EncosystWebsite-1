@@ -1,7 +1,7 @@
 'use client';
 
 import { Brain, Check, Zap, Settings, ArrowLeft, Wrench } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
@@ -159,7 +159,7 @@ export default function ArmoiresPage() {
             <ul className="space-y-3">
               {specifications.map((spec, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Check className="text-green-600 mt-1" size={20} />
+                  <Check className="text-orange-600 mt-1" size={20} />
                   <span className="text-gray-700">{spec}</span>
                 </li>
               ))}
@@ -167,9 +167,9 @@ export default function ArmoiresPage() {
           </div>
 
           {/* Features */}
-          <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
-              <Zap className="text-blue-600" size={32} />
+              <Zap className="text-orange-600" size={32} />
               <h2 className="text-2xl font-bold text-gray-900">
                 {t('features.title')}
               </h2>
@@ -190,10 +190,10 @@ export default function ArmoiresPage() {
 
       {/* Modernization */}
       <section className="container mx-auto px-4 mb-16">
-        <div className="max-w-6xl mx-auto bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-12 shadow-lg">
+        <div className="max-w-6xl mx-auto bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-12 shadow-lg">
 
           <div className="flex items-center gap-3 mb-8">
-            <Wrench className="text-green-600" size={40} />
+            <Wrench className="text-orange-600" size={40} />
             <h2 className="text-4xl font-bold text-gray-900">
               {t('modernization.title')}
             </h2>
@@ -211,7 +211,7 @@ export default function ArmoiresPage() {
               <ul className="space-y-3">
                 {modernization.benefits.map((b, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="text-green-600 mt-1" />
+                    <Check className="text-orange-600 mt-1" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -241,13 +241,13 @@ export default function ArmoiresPage() {
             {modernization.steps.map((s, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl border-2 border-green-300 p-6 hover:border-green-500 transition-all shadow-md"
+                className="bg-white rounded-xl border-2 border-gray-200 p-6 hover:border-orange-500 transition-all shadow-md"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-4">
                   {index + 1}
                 </div>
 
-                <h4 className="text-lg font-bold mb-2">{s.title}</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{s.title}</h4>
                 <p className="text-gray-600">{s.description}</p>
               </div>
             ))}
@@ -270,26 +270,6 @@ export default function ArmoiresPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-12 text-center shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('cta.title')}
-            </h2>
-            <p className="text-xl text-orange-50 mb-8">
-              {t('cta.subtitle')}
-            </p>
-
-            <Link 
-              href="/contact"
-              className="inline-block bg-white text-orange-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
-            >
-              {t('cta.button')}
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

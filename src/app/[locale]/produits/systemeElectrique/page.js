@@ -1,7 +1,7 @@
 'use client';
 
 import { CircuitBoard, Check, Zap, Power, ArrowLeft, Battery, AlertTriangle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
@@ -85,7 +85,7 @@ export default function IngenierieSystemeElectriquePage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl">
               <CircuitBoard className="text-white" size={40} />
             </div>
             <div>
@@ -138,9 +138,9 @@ export default function IngenierieSystemeElectriquePage() {
               return (
                 <div 
                   key={index}
-                  className="bg-white rounded-xl border-2 border-gray-200 p-8 hover:border-blue-500 transition-all shadow-lg hover:shadow-xl"
+                  className="bg-white rounded-xl border-2 border-gray-200 p-8 hover:border-orange-500 transition-all shadow-lg hover:shadow-xl"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
                     <Icon className="text-white" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -164,9 +164,9 @@ export default function IngenierieSystemeElectriquePage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Postes HTA */}
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
               <div className="flex items-center gap-3 mb-6">
-                <Power size={32} className="text-blue-600" />
+                <Power size={32} className="text-orange-600" />
                 <h3 className="text-2xl font-bold text-gray-900">
                   {t('solutions.postesHTA.title')}
                 </h3>
@@ -174,7 +174,7 @@ export default function IngenierieSystemeElectriquePage() {
               <ul className="space-y-3">
                 {postesHTA.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
+                    <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
@@ -182,9 +182,9 @@ export default function IngenierieSystemeElectriquePage() {
             </div>
 
             {/* Distributions des auxiliaires */}
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
               <div className="flex items-center gap-3 mb-6">
-                <Battery size={32} className="text-green-600" />
+                <Battery size={32} className="text-orange-600" />
                 <h3 className="text-2xl font-bold text-gray-900">
                   {t('solutions.distributions.title')}
                 </h3>
@@ -192,7 +192,7 @@ export default function IngenierieSystemeElectriquePage() {
               <ul className="space-y-3">
                 {distributions.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="text-blue-600 flex-shrink-0 mt-1" size={20} />
+                    <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
@@ -220,25 +220,6 @@ export default function IngenierieSystemeElectriquePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-12 text-center shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('cta.title')}
-            </h2>
-            <p className="text-xl text-blue-50 mb-8">
-              {t('cta.subtitle')}
-            </p>
-            <Link 
-              href="/contact"
-              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
-            >
-              {t('cta.button')}
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

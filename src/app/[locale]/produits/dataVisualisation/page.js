@@ -1,7 +1,7 @@
 'use client';
 
 import { Database, Check, BarChart3, TrendingUp, ArrowLeft, Cloud, Download } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
@@ -84,7 +84,7 @@ export default function DataVisualisationPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl">
               <Database className="text-white" size={40} />
             </div>
             <div>
@@ -134,9 +134,9 @@ export default function DataVisualisationPage() {
               return (
                 <div 
                   key={index}
-                  className="bg-white rounded-xl border-2 border-gray-200 p-8 hover:border-purple-500 transition-all shadow-lg hover:shadow-xl"
+                  className="bg-white rounded-xl border-2 border-gray-200 p-8 hover:border-orange-500 transition-all shadow-lg hover:shadow-xl"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
                     <Icon className="text-white" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -157,7 +157,7 @@ export default function DataVisualisationPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Caractéristiques Techniques */}
-            <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl border-2 border-purple-200 p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 {t('specifications.title')}
               </h2>
@@ -172,14 +172,14 @@ export default function DataVisualisationPage() {
             </div>
 
             {/* Types de Rapports */}
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 {t('reports.title')}
               </h2>
               <ul className="space-y-3">
                 {reports.map((rapport, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="text-purple-600 flex-shrink-0 mt-1" size={20} />
+                    <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
                     <span className="text-gray-700">{rapport}</span>
                   </li>
                 ))}
@@ -189,25 +189,6 @@ export default function DataVisualisationPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-12 text-center shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('cta.title')}
-            </h2>
-            <p className="text-xl text-purple-50 mb-8">
-              {t('cta.subtitle')}
-            </p>
-            <Link 
-              href="/contact"
-              className="inline-block bg-white text-purple-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
-            >
-              {t('cta.button')}
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

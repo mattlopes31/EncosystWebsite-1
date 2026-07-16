@@ -1,7 +1,7 @@
 'use client';
 
-import { Activity, Check, Zap, TrendingUp, ArrowLeft, Radio, Shield, Gauge, AlertCircle, Wrench } from 'lucide-react';
-import Link from 'next/link';
+import { Activity, Check, Zap, TrendingUp, ArrowLeft, Radio, Shield, Gauge } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
@@ -59,9 +59,6 @@ export default function RegulationTensionExcitationPage() {
     modeRegulation: t.raw('fonctionnalitesRegulateur.modeRegulation.items'),
     autresFonctionnalites: t.raw('fonctionnalitesRegulateur.autresFonctionnalites.items')
   };
-  const systemesRegulateur = t.raw('systemesRegulateur.items');
-  const problematiques = t.raw('problematiques.items');
-  const servicePropose = t.raw('servicesPropose.items');
   const armoiresExcitationItems = t.raw('armoiresExcitation.items');
 
   const images = [
@@ -85,7 +82,7 @@ export default function RegulationTensionExcitationPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl">
               <Zap className="text-white" size={40} />
             </div>
             <div>
@@ -119,6 +116,7 @@ export default function RegulationTensionExcitationPage() {
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>{t('excitationTension.p1')}</p>
               <p>{t('excitationTension.p2')}</p>
+              <p>{t('excitationTension.p3')}</p>
             </div>
           </div>
         </div>
@@ -136,7 +134,7 @@ export default function RegulationTensionExcitationPage() {
               <ul className="space-y-3">
                 {armoiresExcitationItems.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="text-rose-600 flex-shrink-0 mt-1" size={20} />
+                    <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                     <div>
                       <strong>{item.title} :</strong> {item.description}
                     </div>
@@ -149,26 +147,6 @@ export default function RegulationTensionExcitationPage() {
       </section>
 
       {/* Technologie et Service */}
-      <section className="container mx-auto px-4 mb-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-12 shadow-lg">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              {t('technologieService.title')}
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-8">
-              {t('technologieService.intro')}
-            </p>
-            
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              {t('technologieService.miseEnService.title')}
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              {t('technologieService.miseEnService.description')}
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Points forts */}
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
@@ -179,10 +157,10 @@ export default function RegulationTensionExcitationPage() {
             {pointsForts.map((point, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl border-2 border-gray-200 p-8 hover:border-rose-500 transition-all shadow-lg hover:shadow-xl"
+                className="bg-white rounded-xl border-2 border-gray-200 p-8 hover:border-orange-500 transition-all shadow-lg hover:shadow-xl"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <Shield size={24} className="text-rose-600" />
+                  <Shield size={24} className="text-orange-600" />
                   <h3 className="text-xl font-bold text-gray-900">
                     {point.title}
                   </h3>
@@ -196,127 +174,44 @@ export default function RegulationTensionExcitationPage() {
         </div>
       </section>
 
-      {/* Fonctionnalités et Services */}
+      {/* Fonctionnalités du régulateur */}
       <section className="container mx-auto px-4 mb-16">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Fonctionnalités du régulateur propriétaire */}
-            <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl border-2 border-purple-200 p-8 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <Gauge size={32} className="text-purple-600" />
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('fonctionnalitesRegulateur.title')}
-                </h2>
-              </div>
-              
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                {t('fonctionnalitesRegulateur.modeRegulation.title')}
-              </h3>
-              <ul className="space-y-2 mb-6">
-                {fonctionnalitesRegulateur.modeRegulation.map((fonc, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check className="text-rose-600 flex-shrink-0 mt-0.5" size={18} />
-                    <span className="text-gray-700">{fonc}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                {t('fonctionnalitesRegulateur.autresFonctionnalites.title')}
-              </h3>
-              <ul className="space-y-2">
-                {fonctionnalitesRegulateur.autresFonctionnalites.map((fonc, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check className="text-rose-600 flex-shrink-0 mt-0.5" size={18} />
-                    <span className="text-gray-700">{fonc}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
+            <div className="flex items-center gap-3 mb-6">
+              <Gauge size={32} className="text-orange-600" />
+              <h2 className="text-2xl font-bold text-gray-900">
+                {t('fonctionnalitesRegulateur.title')}
+              </h2>
             </div>
 
-            {/* Vos problématiques */}
-            <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-200 p-8 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <AlertCircle size={32} className="text-orange-600" />
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('problematiques.title')}
-                </h2>
-              </div>
-              <ul className="space-y-3">
-                {problematiques.map((prob, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="text-orange-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-700">{prob}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-3">
+              {t('fonctionnalitesRegulateur.modeRegulation.title')}
+            </h3>
+            <ul className="space-y-2 mb-6">
+              {fonctionnalitesRegulateur.modeRegulation.map((fonc, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <Check className="text-orange-600 flex-shrink-0 mt-0.5" size={18} />
+                  <span className="text-gray-700">{fonc}</span>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="text-lg font-bold text-gray-900 mb-3">
+              {t('fonctionnalitesRegulateur.autresFonctionnalites.title')}
+            </h3>
+            <ul className="space-y-2">
+              {fonctionnalitesRegulateur.autresFonctionnalites.map((fonc, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <Check className="text-orange-600 flex-shrink-0 mt-0.5" size={18} />
+                  <span className="text-gray-700">{fonc}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Systèmes régulateur et Services */}
-      <section className="container mx-auto px-4 mb-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Systèmes régulateur */}
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <Wrench size={32} className="text-green-600" />
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('systemesRegulateur.title')}
-                </h2>
-              </div>
-              <ul className="space-y-3">
-                {systemesRegulateur.map((sys, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-700">{sys}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services proposés */}
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-200 p-8 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <Zap size={32} className="text-blue-600" />
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('servicesPropose.title')}
-                </h2>
-              </div>
-              <ul className="space-y-3">
-                {servicePropose.map((service, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-700">{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl p-12 text-center shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('cta.title')}
-            </h2>
-            <p className="text-xl text-rose-50 mb-8">
-              {t('cta.subtitle')}
-            </p>
-            <Link 
-              href="/contact"
-              className="inline-block bg-white text-rose-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
-            >
-              {t('cta.button')}
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
