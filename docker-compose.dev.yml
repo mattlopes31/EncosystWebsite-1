@@ -1,0 +1,21 @@
+services:
+  encosyst-website-dev:
+    image: node:20-alpine
+    container_name: encosyst-website-dev
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=development
+      - HOSTNAME=0.0.0.0
+      - PORT=3000
+      # Pour éviter les problèmes de file watchers en volume (Windows/WSL)
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    command: sh -lc "npm ci && npm run dev"
