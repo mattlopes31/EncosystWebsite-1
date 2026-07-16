@@ -14,10 +14,9 @@ export default function Hero() {
     '/images/ARMOIRES/oui.jpg',
     '/images/scada3.png',
     '/imagesV2/HDG_toma_2.jpeg',
-    '/images/20201116_075131.jpg',
     '/images/20251024_162912.jpg',
     '/images/IMG-20250306-WA0004.jpg',
-    '/images/HDGtoma.jpeg'
+    '/images/SLIDER/Armoires.jpg'
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
