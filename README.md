@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ENCOSYST - Site Web
+
+Site web officiel d'ENCOSYST (Energy Control System), spécialiste dans la conception de systèmes de contrôle-commande pour centrales hydroélectriques de petite et moyenne capacité.
+
+## Description
+
+ENCOSYST est une entreprise française basée au pied des Pyrénées, spécialisée depuis 2011 dans le développement de solutions innovantes et sur mesure pour la rénovation de systèmes existants ou la réalisation de nouveaux projets hydroélectriques. Avec plus de 15 ans d'expérience, l'entreprise a réalisé plus de 80 projets à travers 4 continents (Europe, Amérique Centrale, Afrique, Asie), représentant une puissance cumulée de 367 MW.
+
+Le site présente l'expertise complète de l'entreprise en systèmes de contrôle-commande : SCADA/Supervision, systèmes électriques, protections, visualisation de données, régulation de vitesse et de tension, instrumentation, et armoires de contrôle-commande. Il inclut également une page de références détaillant les projets réalisés et un formulaire de contact.
+
+**Technologies** : Next.js 15, React, Tailwind CSS, next-intl (multilingue FR/EN/ES), Nodemailer (SMTP)
 
 ## Getting Started
 
