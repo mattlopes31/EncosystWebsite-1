@@ -188,11 +188,11 @@
           "mainTitle": "SCADA / Supervisión / Hipervisión / Telegestión",
           "subtitle": "Supervisión Inteligente y Segura",
           "intro": [
-            "Nuestros sistemas SCADA (Supervisory Control And Data Acquisition) ofrecen supervisión completa e intuitiva de sus instalaciones hidroeléctricas para operar tanto unidades de producción como tomas de agua y presas. Desarrollados con especial atención a la ergonomía, permiten una operación óptima de sus instalaciones.",
-            "Cada SCADA se desarrolla a medida con una interfaz gráfica moderna y sinópticos animados en tiempo real. La estética refinada facilita el manejo y reduce la carga cognitiva de los operadores.",
-            "Nuestros sistemas SCADA integran funciones avanzadas: gestión de alarmas, historización, herramientas de soporte al mantenimiento preventivo, acceso remoto, etc.",
-            "El desarrollo de nuestros sistemas se basa en soluciones de software del mercado (software estándar, soluciones probadas) y un enfoque multi-proveedor. Esta elección garantiza una arquitectura abierta e independiente, esencial para la sostenibilidad de su plataforma.",
-            "Implementamos hipervisión que unifica y asegura todos sus sitios. Conectados vía VPN, se controlan desde una única interfaz."
+            "Desarrollo de sistemas SCADA / Supervisión ergonómicos y fáciles de usar con una estética cuidada y funcionalidades completas para una explotación fácil y eficiente de sus instalaciones.",
+            "Desarrollamos sistemas de Hipervisión que unifican y aseguran todos sus sitios. Conectados a través de una VPN, todos se gestionan desde una única interfaz.",
+            "Cada SCADA se desarrolla a medida con una interfaz gráfica moderna y sinópticos animados en tiempo real. La estética cuidada facilita el manejo y reduce la carga cognitiva de los operadores.",
+            "Nuestros sistemas SCADA integran funciones avanzadas: gestión de alarmas, historización, herramientas de soporte al mantenimiento preventivo, acceso remoto seguro por VPN.",
+            "El desarrollo de nuestros sistemas se basa en soluciones de software del mercado (software estándar, soluciones probadas) y un enfoque multi-proveedor. Esta elección garantiza una arquitectura abierta e independiente, esencial para la sostenibilidad de su plataforma."
           ],
           "mainFeatures": {
             "title": "Funcionalidades Principales",
@@ -395,9 +395,10 @@
         "mainTitle": "Armarios de Excitación Estática y Regulación de Tensión",
         "subtitle": "Nuestra experiencia en el control de la cadena de excitación de sus alternadores",
         "excitationTension": {
-          "title": "Excitación de Tensión para alternadores con diodos rotativos (sin escobillas)",
-          "p1": "Especializados en sistemas de excitación de alternadores, dominamos toda la cadena de regulación para garantizar el rendimiento y la fiabilidad de sus instalaciones.",
-          "p2": "Solución a medida: Integramos reguladores de las marcas más importantes en armarios nuevos o modernizamos sus equipos in situ."
+          "title": "Regulador de Tensión para alternadores con diodos rotativos (sin escobillas)",
+          "p1": "Especializados en sistemas de excitación de alternadores, dominamos toda la cadena de regulación y su correcta integración en el sistema de control y mando del grupo para garantizar el rendimiento y la fiabilidad de sus instalaciones.",
+          "p2": "Instalamos reguladores de las marcas más importantes disponibles en el mercado.",
+          "p3": "Solución a medida: Integramos los reguladores en nuestros armarios de control y mando o en armarios dedicados. También podemos integrar los reguladores directamente en sus equipos en sitio."
         },
         "armoiresExcitation": {
           "title": "Armarios de Excitación Estática: Fabricación y Dominio",
@@ -481,14 +482,10 @@
               "Compensación de potencia reactiva por estatismo",
               "Pre-posicionamiento",
               "Control del circuito de cebado",
-              "Limitadores",
-              "Relación U/F",
-              "Corriente máxima de excitación en vacío y en carga",
-              "Corriente mínima de excitación",
-              "Corriente del estator",
-              "Tensión del estator",
-              "PSS",
-              "Alpha mín / máx"
+              "Limitador Relación U/F",
+              "Limitador Corriente máxima de excitación en vacío y en carga",
+              "Limitador Corriente mínima de excitación",
+              "Limitador Corriente del estator"
             ]
           }
         },
@@ -583,7 +580,7 @@
             },
             {
               "titre": "Redacción de documentación técnica completa",
-              "description": "(notas de cálculo, informes de estudio, curvas de disparo)"
+              "description": "Notas de cálculo, curvas de disparo y elaboración de los cuadernos de ajustes"
             }
           ]
         },
@@ -597,11 +594,11 @@
             },
             {
               "titre": "Pruebas y validación en taller",
-              "description": "en banco de pruebas para prevalidar las funcionalidades"
+              "description": "Verificación del correcto funcionamiento y parametrización de cada función mediante una maleta de inyección secundaria"
             },
             {
               "titre": "Puesta en servicio y pruebas en sitio",
-              "description": "con maletín de inyección secundaria para la verificación final de la cadena de protección"
+              "description": "Verificación de los circuitos de medida, control y cadenas de disparo. Simulaciones de fallo y control de los tiempos de apertura de los disyuntores"
             }
           ]
         },
@@ -659,49 +656,28 @@
         "mainTitle": "Instrumentación",
         "subtitle": "Suministro, instalación y puesta en servicio",
         "intro": {
-          "title": "Solución Completa de Instrumentación",
-          "p1": "Ya sea para sus unidades de producción, presas o tomas de agua, ofrecemos instrumentación y repuestos para todos sus equipos. Nuestra experiencia cubre todas sus necesidades.",
-          "p2": "Nuestra gama incluye instrumentos de medición para: niveles (presas, tomas de agua, canales), temperaturas (rodamientos, bobinados, aceite), posiciones (válvulas, compuertas, distribuidor), velocidades (rotación de turbina), vibraciones (monitoreo de unidades), caudales (canal abierto y tubería forzada).",
-          "p3": "Todos nuestros sensores son de grado industrial, seleccionados de fabricantes reconocidos. Se calibran en laboratorio antes de la entrega y se suministran con sus certificados de calibración.",
-          "p4": "La instalación es realizada por nuestros equipos o nuestros socios locales cualificados. Proporcionamos cableado completo hasta los armarios de control, pruebas de puesta en servicio y formación de operadores."
+          "title": "Suministro de instrumentación y repuestos",
+          "p1": "Ya sea para sus diferentes tipos de turbinas, sistemas eléctricos o tomas de agua, podemos aportarle soluciones para el suministro de instrumentación y repuestos para todos sus equipos, colaborando con una amplia red de proveedores europeos.",
+          "p2": "La instalación y puesta en marcha puede ser realizada por nuestros equipos, nuestros socios locales cualificados o sus propios equipos."
         },
         "typesInstrumentation": {
           "title": "Tipos de Sensores",
           "items": [
             {
               "categorie": "Niveles",
-              "capteurs": [
-                "Radar",
-                "Ultrasónico",
-                "Flotador",
-                "Piezométrico"
-              ]
+              "capteurs": ["Radar", "Ultrasonido", "Flotador", "Piezométrico"]
             },
             {
               "categorie": "Temperatura",
-              "capteurs": [
-                "PT100",
-                "Termopar",
-                "RTD",
-                "Infrarrojo"
-              ]
+              "capteurs": ["Cojinetes", "Devanados", "Aceite"]
             },
             {
-              "categorie": "Presión",
-              "capteurs": [
-                "Piezoresistivo",
-                "Capacitivo",
-                "Diferencial"
-              ]
+              "categorie": "Otro",
+              "capteurs": ["Presión aceite / agua", "Presión diferencial", "Vibraciones"]
             },
             {
               "categorie": "Caudal",
-              "capteurs": [
-                "Electromagnético",
-                "Ultrasónico",
-                "Vortex",
-                "Canal abierto"
-              ]
+              "capteurs": ["Tubería forzada", "Canal abierto", "Circuito de refrigeración / lubricación"]
             }
           ]
         },
@@ -849,12 +825,11 @@
           "distributions": {
             "title": "Distribuciones auxiliares",
             "items": [
-              "Cuadro general BT 400V",
+              "TGBT 400V",
               "Cuadros divisionales",
-              "Cargadores de baterías",
-              "110V/48V/24V",
+              "Cargadores de baterías (110V/48V/24V)",
               "Distribución DC",
-              "Sistemas UPS",
+              "UPS / Inversores",
               "Con posibilidad de redundancia para sistemas críticos"
             ]
           },

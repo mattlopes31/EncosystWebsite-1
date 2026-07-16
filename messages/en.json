@@ -188,11 +188,11 @@
           "mainTitle": "SCADA / Supervision / Hypervision / Remote Management",
           "subtitle": "Intelligent and Secure Supervision",
           "intro": [
-            "Our SCADA (Supervisory Control And Data Acquisition) systems offer complete and intuitive supervision of your hydroelectric installations to operate both production units and water intakes and dams. Developed with particular attention to ergonomics, they enable optimal operation of your installations.",
+            "Development of ergonomic and user-friendly SCADA / Supervision systems with a refined aesthetic and comprehensive features for easy and efficient operation of your installations.",
+            "We develop Hypervision systems that unify and secure all your sites. Connected via VPN, they are all controlled from a single interface.",
             "Each SCADA is custom developed with a modern graphical interface and real-time animated synoptics. The refined aesthetics facilitate handling and reduce operators' cognitive load.",
-            "Our SCADA systems integrate advanced functions: alarm management, historization, preventive maintenance support tools, remote access, etc.",
-            "The development of our systems relies on market software solutions (standard software, proven solutions) and a multi-vendor approach. This choice guarantees an open and independent architecture, essential for the sustainability of your platform.",
-            "We implement hypervision that unifies and secures all your sites. Connected via VPN, they are controlled from a single interface."
+            "Our SCADA systems integrate advanced functions: alarm management, historization, preventive maintenance support tools, secure remote access via VPN.",
+            "The development of our systems relies on market software solutions (standard software, proven solutions) and a multi-vendor approach. This choice guarantees an open and independent architecture, essential for the sustainability of your platform."
           ],
           "mainFeatures": {
             "title": "Main Features",
@@ -395,9 +395,10 @@
         "mainTitle": "Static Excitation and Voltage Regulation Cabinets",
         "subtitle": "Our expertise in controlling your alternators' excitation chain",
         "excitationTension": {
-          "title": "Voltage Excitation for brushless alternators (rotating diodes)",
-          "p1": "Specialized in generator excitation systems, we master the entire regulation chain to guarantee the performance and reliability of your installations.",
-          "p2": "Custom solution: We integrate regulators from the biggest brands in new cabinets or modernize your equipment on site."
+          "title": "Voltage Regulator for brushless alternators (rotating diodes)",
+          "p1": "Specialized in generator excitation systems, we master the entire regulation chain and its proper integration into the group's control command system to guarantee the performance and reliability of your installations.",
+          "p2": "We install regulators from the biggest brands available on the market.",
+          "p3": "Custom solution: We integrate regulators into our control command cabinets or dedicated cabinets. We can also integrate regulators directly into your on-site equipment."
         },
         "armoiresExcitation": {
           "title": "Static Excitation Cabinets: Manufacturing and Mastery",
@@ -481,14 +482,10 @@
               "Reactive power compensation by droop",
               "Pre-positioning",
               "Field flashing circuit control",
-              "Limiters",
-              "U/F ratio",
-              "Maximum excitation current no-load and loaded",
-              "Minimum excitation current",
-              "Stator current",
-              "Stator voltage",
-              "PSS",
-              "Alpha min / max"
+              "Limiter U/F ratio",
+              "Limiter Maximum excitation current no-load and loaded",
+              "Limiter Minimum excitation current",
+              "Limiter Stator current"
             ]
           }
         },
@@ -583,7 +580,7 @@
             },
             {
               "titre": "Complete technical documentation",
-              "description": "(calculation notes, study reports, tripping curves)"
+              "description": "Calculation notes, tripping curves and preparation of setting booklets"
             }
           ]
         },
@@ -597,11 +594,11 @@
             },
             {
               "titre": "Workshop testing and validation",
-              "description": "on test bench to pre-validate functionalities"
+              "description": "Verification of the correct operation and parameterization of each function using a secondary injection kit"
             },
             {
               "titre": "On-site commissioning and testing",
-              "description": "with secondary injection case for final protection chain verification"
+              "description": "Verification of measurement circuits, control circuits and tripping chains. Fault simulations and verification of circuit breaker opening times"
             }
           ]
         },
@@ -659,49 +656,28 @@
         "mainTitle": "Instrumentation",
         "subtitle": "Supply, installation and commissioning",
         "intro": {
-          "title": "Complete Instrumentation Solution",
-          "p1": "Whether for your production units, dams or water intakes, we offer instrumentation and spare parts for all your equipment. Our expertise covers all your needs.",
-          "p2": "Our range includes measuring instruments for: levels (dams, water intakes, channels), temperatures (bearings, windings, oil), positions (valves, flaps, distributor), speeds (turbine rotation), vibrations (unit monitoring), flow rates (open channel and penstock).",
-          "p3": "All our sensors are industrial grade, selected from recognized manufacturers. They are calibrated in the laboratory before delivery and supplied with their calibration certificates.",
-          "p4": "Installation is carried out by our teams or our qualified local partners. We provide complete wiring to control cabinets, commissioning tests and operator training."
+          "title": "Supply of instrumentation and spare parts",
+          "p1": "Whether for your different types of turbines, electrical systems or water intakes, we can provide solutions for the supply of instrumentation and spare parts for all your equipment, through our wide network of European suppliers.",
+          "p2": "Installation and commissioning can be carried out by our teams, our qualified local partners or your own teams."
         },
         "typesInstrumentation": {
           "title": "Sensor Types",
           "items": [
             {
               "categorie": "Levels",
-              "capteurs": [
-                "Radar",
-                "Ultrasonic",
-                "Float",
-                "Piezometric"
-              ]
+              "capteurs": ["Radar", "Ultrasonic", "Float", "Piezometric"]
             },
             {
               "categorie": "Temperature",
-              "capteurs": [
-                "PT100",
-                "Thermocouple",
-                "RTD",
-                "Infrared"
-              ]
+              "capteurs": ["Bearings", "Windings", "Oil"]
             },
             {
-              "categorie": "Pressure",
-              "capteurs": [
-                "Piezoresistive",
-                "Capacitive",
-                "Differential"
-              ]
+              "categorie": "Other",
+              "capteurs": ["Oil / water pressure", "Differential pressure", "Vibrations"]
             },
             {
               "categorie": "Flow",
-              "capteurs": [
-                "Electromagnetic",
-                "Ultrasonic",
-                "Vortex",
-                "Open channel"
-              ]
+              "capteurs": ["Penstock", "Open channel", "Cooling / lubrication circuit"]
             }
           ]
         },
@@ -849,13 +825,12 @@
           "distributions": {
             "title": "Auxiliary Distributions",
             "items": [
-              "400V main switchboard",
-              "Distribution boards",
-              "Battery chargers",
-              "110V/48V/24V",
+              "TGBT 400V",
+              "Sub-distribution boards",
+              "Battery chargers (110V/48V/24V)",
               "DC distribution",
-              "UPS systems",
-              "With redundancy options for critical systems"
+              "UPS / Inverters",
+              "With redundancy option for critical systems"
             ]
           },
           "systemesAuxiliaires": {

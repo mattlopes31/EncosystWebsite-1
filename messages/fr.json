@@ -9,10 +9,10 @@
     "title": "Spécialiste dans la conception de systèmes de contrôle commande pour centrales hydroélectriques de petite et moyenne capacité depuis 2011.",
     "subtitle": "Nous apportons notre expertise au développement de solutions innovantes et sur mesure pour la rénovation de système existants ou pour la réalisation de nouveaux projets.",
     "cta": "Découvrir nos solutions",
-    "experience": "ans d'expérience",
+    "experience": "ans d'activité",
     "projects": "projets réalisés",
     "countries": "pays",
-    "installedMW": "Puissance cumulée (MW) de l’ensemble des contrôles commande réalisé",
+    "installedMW": "Puissance cumulée (MW) de l’ensemble des contrôles commande réalisés",
     "employees": "personnes clé Une équipe réduite qui garantit une flexibilité accrue et une efficacité maximisée",
     "worldPresence": "Présence Internationale",
     "worldExpertise": "Une Expertise Mondiale",
@@ -33,7 +33,7 @@
   },
   "references": {
     "title": "Nos Références",
-    "subtitle": "Plus de 14 ans d'expérience à travers le monde",
+    "subtitle": "Plus de 15 ans d'activité à travers le monde",
     "allYears": "Toutes les années",
     "allCountries": "Tous les pays",
     "allPowers": "Toutes les puissances",
@@ -181,17 +181,17 @@
     "scada": {
       "title": "SCADA / Supervision",
       "subtitle": "Supervision Intelligente et Sécurisée",
-      "description": "Développement système SCADA ergonomique et coniviaux avec un esthétique soignée et des fonctionnalités complètes pour une opération simple et efficace ",
+      "description": "Développement de systèmes SCADA / Supervision a la fois ergonomiques et conviviaux avec une esthétique soignée et des fonctionnalités complètes pour une exploitation de vos installations aisée et efficace ",
       "scada": {
         "page": {
           "mainTitle": "SCADA / Supervision / Hypervision / Télégestion",
           "subtitle": "Supervision Intelligente et Sécurisée",
           "intro": [
-            "Nos systèmes SCADA (Supervisory Control And Data Acquisition) offrent une supervision complète et intuitive de vos installations hydroélectriques pour exploiter aussi bien des groupes de productions que les prises d'eau et barrages. Développés avec une attention particulière apportée à l'ergonomie, ils permettent une exploitation optimale de vos installations.",
+            "Développement de systèmes SCADA / Supervision à la fois ergonomiques et conviviaux avec une esthétique soignée et des fonctionnalités complètes pour une exploitation de vos installations aisée et efficace.",
+            "Nous réalisons des Hypervision qui unifient et sécurisent l'ensemble de vos sites. Connectés au travers d'un VPN, ils sont tous pilotés depuis une seule et même interface.",
             "Chaque SCADA est développé sur mesure avec une interface graphique moderne et des synoptiques animés en temps réel. L'esthétique soignée facilite la prise en main et réduit la charge cognitive des opérateurs.",
-            "Nos SCADA intègrent des fonctions avancées : gestion des alarmes, historisation, outils d'aide à la maintenance préventive, accès distant, etc.",
-            "Le développement de nos systèmes s'appuie sur des solutions logicielles du marché (logiciels standards, solutions éprouvées) et une approche multi-éditeurs. Ce choix garantit une architecture ouverte et indépendante, essentielle à la pérennisation de votre plateforme.",
-            "Nous réalisons des hypervision qui unifie et sécurise l'ensemble de vos sites. Connectés par VPN, ils sont pilotés depuis une seule et même interface."
+            "Nos SCADA intègrent des fonctions avancées : gestion des alarmes, historisation, outils d'aide à la maintenance préventive, accès distant sécurisé par VPN.",
+            "Le développement de nos systèmes s'appuie sur des solutions logicielles du marché (logiciels standards, solutions éprouvées) et une approche multi-éditeurs. Ce choix garantit une architecture ouverte et indépendante, essentielle à la pérennisation de votre plateforme."
           ],
           "mainFeatures": {
             "title": "Fonctionnalités Principales",
@@ -380,9 +380,9 @@
       }
     },
     "tension": {
-      "title": "Régulations de Tension et Armoires d'Excitation Statique",
-      "subtitle": "Armoires d'Excitation Statique et de Régulation de Tension",
-      "description": "Régulateut de tension pour alternateur à diodes tournantes (sans balais) et systèmes d'excitation statique jusqu'a 1000 Adc. Régulations de tension embarqué dans un automate ou équipement dédiée avec possibilité de redondance",
+      "title": "Régulateur de Tension pour alternateurs à diodes tournantes (sans balais)",
+      "subtitle": "Régulateur de Tension pour alternateurs à diodes tournantes (sans balais)",
+      "description": "Spécialisés dans les systèmes d'excitation d'alternateurs, nous maîtrisons l'ensemble de la chaîne de régulation et sa bonne intégration dans le système de contrôle commande du groupe pour garantir la performance et la fiabilité de vos installations.",
       "details": {
         "detail1": "Jusqu'à 1000Adc",
         "detail2": "Régulateur dédiée",
@@ -390,12 +390,13 @@
       },
       "page": {
         "backButton": "Retour aux produits",
-        "mainTitle": "Armoires d'Excitation Statique et de Régulation de Tension",
+        "mainTitle": "Régulateur de Tension pour alternateurs à diodes tournantes (sans balais)",
         "subtitle": "Notre expertise en contrôle de la chaîne d'excitation de vos alternateurs",
         "excitationTension": {
-          "title": "Excitation de Tension pour alternateurs à diodes tournantes (sans balais)",
-          "p1": "Spécialisés dans les systèmes d'excitation d'alternateurs, nous maîtrisons l'ensemble de la chaîne de régulation pour garantir la performance et la fiabilité de vos installations.",
-          "p2": "Solution sur mesure : Nous intégrons des régulateurs des plus grandes marques dans des armoires neuves ou modernisons vos équipements sur site."
+          "title": "Régulateur de Tension pour alternateurs à diodes tournantes (sans balais)",
+          "p1": "Spécialisés dans les systèmes d'excitation d'alternateurs, nous maîtrisons l'ensemble de la chaîne de régulation et sa bonne intégration dans le système de contrôle commande du groupe pour garantir la performance et la fiabilité de vos installations.",
+          "p2": "Nous installons des régulateurs des plus grandes marques disponibles sur le marché.",
+          "p3": "Solution sur mesure : Nous intégrons les régulateurs dans nos armoires de contrôle commande ou bien des armoires dédiées. Nous pouvons aussi intégrer les régulateurs directement dans vos équipements sur site."
         },
         "armoiresExcitation": {
           "title": "Armoires d'Excitation Statique : Fabrication et Maîtrise",
@@ -479,14 +480,10 @@
               "Compensation de la puissance réactive par statisme",
               "Pré-positionnement",
               "Pilotage du circuit d'amorçage",
-              "Limiteurs",
-              "Rapport U/F",
-              "Maximum courant d'excitation à vide et en charge",
-              "Minimum courant d'excitation",
-              "Courant stator",
-              "Tension stator",
-              "PSS",
-              "Alpha min / max"
+              "Limiteur Rapport U/F",
+              "Limiteur Maximum courant d'excitation à vide et en charge",
+              "Limiteur Minimum courant d'excitation",
+              "Limiteur Courant stator"
             ]
           }
         },
@@ -581,7 +578,7 @@
             },
             {
               "titre": "Rédaction de dossiers techniques complets",
-              "description": "(notes de calcul, rapports d'étude, courbes de déclenchement)"
+              "description": "Note de calcul, courbes de déclenchement et réalisation des carnets de réglages"
             }
           ]
         },
@@ -595,11 +592,11 @@
             },
             {
               "titre": "Tests et validation en atelier",
-              "description": "sur banc d'essai pour pré-valider les fonctionnalités"
+              "description": "Vérification du bon fonctionnement et du bon paramétrage de chaque fonction à l'aide d'une valise d'injection au secondaire"
             },
             {
               "titre": "Mise en service et tests sur site",
-              "description": "avec valise d'injection secondaire pour la vérification finale de la chaîne de protection"
+              "description": "Vérification des circuits de mesure, de contrôle et des chaînes de déclenchement. Simulations de défaut et contrôle des temps d'ouverture des disjoncteurs"
             }
           ]
         },
@@ -658,49 +655,28 @@
         "mainTitle": "Instrumentation",
         "subtitle": "Fourniture, installation et mise en service",
         "intro": {
-          "title": "Solution Complète d'Instrumentation",
-          "p1": "Que ce soit pour vos unités de production, barrages ou prises d'eau, nous proposons instrumentation et pièces de rechanges pour l'ensemble de vos équipements. Notre expertise couvre l'ensemble de vos besoins.",
-          "p2": "Notre gamme comprend des instruments de mesure pour : niveaux (barrages, prises d'eau, canaux), températures (paliers, enroulements, huile), positions (vannes, clapets, distributeur), vitesses (rotation turbine), vibrations (surveillance des groupes), débits (canal ouvert et conduite forcée).",
-          "p3": "Tous nos capteurs sont de qualité industrielle, sélectionnés auprès de fabricants reconnus. Ils sont calibrés en laboratoire avant livraison et fournis avec leurs certificats de calibration.",
-          "p4": "L'installation est réalisée par nos équipes ou nos partenaires locaux qualifiés. Nous assurons le câblage complet jusqu'aux armoires de contrôle, les tests de mise en service et la formation des opérateurs."
+          "title": "Fourniture d'instrumentation et pièces de rechanges",
+          "p1": "Que ce soit pour vos différents types de turbine, vos systèmes électriques ou vos prises d'eau, nous pouvons vous apporter des solutions pour la fourniture d'instrumentation et pièces de rechanges pour l'ensemble de vos équipements pour lequel nous collaborons avec un large réseau de fournisseurs Européens.",
+          "p2": "L'installation et la mise en service peut être réalisée par nos équipes, nos partenaires locaux qualifiés ou vos propres équipes."
         },
         "typesInstrumentation": {
           "title": "Types de Capteurs",
           "items": [
             {
               "categorie": "Niveaux",
-              "capteurs": [
-                "Radar",
-                "Ultrason",
-                "Flotteur",
-                "Piézométrique"
-              ]
+              "capteurs": ["Radar", "Ultrason", "Flotteur", "Piézométrique"]
             },
             {
               "categorie": "Température",
-              "capteurs": [
-                "PT100",
-                "Thermocouple",
-                "RTD",
-                "Infrarouge"
-              ]
+              "capteurs": ["Paliers", "Enroulements", "Huile"]
             },
             {
-              "categorie": "Pression",
-              "capteurs": [
-                "Piézorésistif",
-                "Capacitif",
-                "Différentiel"
-              ]
+              "categorie": "Autre",
+              "capteurs": ["Pression huile / eau", "Pression différentielle", "Vibrations"]
             },
             {
               "categorie": "Débit",
-              "capteurs": [
-                "Électromagnétique",
-                "Ultrason",
-                "Vortex",
-                "Canal ouvert"
-              ]
+              "capteurs": ["Conduite forcée", "Canal ouvert", "Circuit de réfrigération / lubrification"]
             }
           ]
         },
@@ -801,7 +777,7 @@
     "ingenierie": {
       "title": "Ingénierie du système électrique",
       "subtitle": "Postes HTA, Distributions des auxiliaires, Systèmes Auxiliaires",
-      "description": "Ingénierie du Système Electrique Intégration de l'ensemble des équipements électriques nécessaires au fonctionnement d'une centrale hydroélectrique. Post HTA, transformateur et distribution auxilaires indispensables au bon fonctionnement de l'usine ",
+      "description": "Ingénierie du Système Electrique et Intégration de l'ensemble des équipements électriques nécessaires au fonctionnement d'une centrale hydroélectrique. Poste HTA, transformateurs et distribution auxilaires CA & CC indispensables au bon fonctionnement de l'usine ",
       "details": {
         "detail1": "Postes HTA",
         "detail2": "Distributions des auxiliaires",
@@ -850,8 +826,7 @@
             "items": [
               "TGBT 400V",
               "Tableaux divisionnaires",
-              "Chargeurs de batteries",
-              "110V/48V/24V",
+              "Chargeurs de batteries (110V/48V/24V)",
               "Distribution DC",
               "Onduleurs",
               "Avec possibilité de redondantes pour les systèmes critiques"
